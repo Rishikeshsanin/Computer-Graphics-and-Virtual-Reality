@@ -1,0 +1,81 @@
+name: Finalize CGVR lab collection
+
+on:
+  push:
+    paths:
+      - '.github/workflows/finalize-cgvr-labs.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  consolidate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create notebooks from Python programs
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          for py in sorted(Path('.').glob('lab*/**/*_lab*.py')):
+              code = py.read_text(encoding='utf-8')
+              nb = {
+                  'cells': [{
+                      'cell_type': 'code',
+                      'execution_count': None,
+                      'metadata': {},
+                      'outputs': [],
+                      'source': code.splitlines(True),
+                  }],
+                  'metadata': {
+                      'kernelspec': {
+                          'display_name': 'Python 3',
+                          'language': 'python',
+                          'name': 'python3'
+                      },
+                      'language_info': {'name': 'python', 'version': '3'}
+                  },
+                  'nbformat': 4,
+                  'nbformat_minor': 5
+              }
+              py.with_suffix('.ipynb').write_text(json.dumps(nb, indent=2), encoding='utf-8')
+          PY
+
+      - name: Collect existing lab output screenshots
+        shell: bash
+        run: |
+          set -e
+          curl -L --fail -o lab1/dda_output_1_lab1.png 'https://raw.githubusercontent.com/Rishikeshsanin/DDA-Line-and-Circle-Drawing-Visualizer/main/DDA-Algorithm-main/Screenshot%202026-08-14%20155626.png'
+          curl -L --fail -o lab1/dda_output_2_lab1.png 'https://raw.githubusercontent.com/Rishikeshsanin/DDA-Line-and-Circle-Drawing-Visualizer/main/DDA-Algorithm-main/Screenshot%202026-08-14%20155649.png'
+          curl -L --fail -o lab1/bresenham_output_1_lab1.png 'https://raw.githubusercontent.com/Rishikeshsanin/Bresenham-Line-Drawing-Algorithm-Visualizer/main/Bresenham-Line-Algorithm.-main/Screenshot%202026-08-14%20154234.png'
+          curl -L --fail -o lab1/bresenham_output_2_lab1.png 'https://raw.githubusercontent.com/Rishikeshsanin/Bresenham-Line-Drawing-Algorithm-Visualizer/main/Bresenham-Line-Algorithm.-main/Screenshot%202026-08-14%20154555.png'
+          curl -L --fail -o lab2/midpoint_circle_output_lab2.png 'https://raw.githubusercontent.com/Rishikeshsanin/midpoint-circle-algorithm/main/Screenshot%202026-08-21%20155246.png'
+          curl -L --fail -o lab3/2d_translation_output_lab3.png 'https://raw.githubusercontent.com/Rishikeshsanin/2d-translation-opengl/main/Screenshot%20%28772%29.png'
+          mkdir -p lab5 lab6 lab7 lab8 lab10
+          curl -L --fail -o lab5/cohen_sutherland_output_lab5.png 'https://raw.githubusercontent.com/Rishikeshsanin/cohen-sutherland-line-clipping/main/Screenshot%202026-08-21%20161312.png'
+          curl -L --fail -o lab6/z_buffer_output_lab6.png 'https://raw.githubusercontent.com/Rishikeshsanin/z-buffer-hidden-surface-removal/main/Screenshot%202026-08-21%20161807.png'
+          curl -L --fail -o lab7/phong_illumination_output_lab7.png 'https://raw.githubusercontent.com/Rishikeshsanin/phong-illumination-model/main/Screenshot%202026-08-21%20162050.png'
+          curl -L --fail -o lab8/vertex_fragment_shaders_output_lab8.png 'https://raw.githubusercontent.com/Rishikeshsanin/opengl-vertex-fragment-shaders/main/Screenshot%202026-08-21%20162351.png'
+          curl -L --fail -o lab10/3d_viewing_pipeline_output_1_lab10.png 'https://raw.githubusercontent.com/Rishikeshsanin/3d-viewing-pipeline-opengl/main/Screenshot%202026-08-21%20191001.png'
+          curl -L --fail -o lab10/3d_viewing_pipeline_output_2_lab10.png 'https://raw.githubusercontent.com/Rishikeshsanin/3d-viewing-pipeline-opengl/main/Screenshot%202026-08-21%20191017.png'
+
+      - name: Commit consolidated files
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add lab1 lab2 lab3 lab5 lab6 lab7 lab8 lab10
+          if git diff --cached --quiet; then
+            echo 'Nothing new to commit.'
+          else
+            git commit -m 'Add lab notebooks and output screenshots'
+            git push
+          fi
