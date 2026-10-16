@@ -4,6 +4,18 @@
 **Student:** Munnaluri Rishikesh  
 **USN:** 1RVU23CSE291
 
+## Unity demo — open this for the live presentation
+
+The supplied unfinished Unity draft has been continued in **[Unity_Retail_AR_Demo](Unity_Retail_AR_Demo/README.md)** using **Unity 6000.3.0f1**.
+
+In Unity Hub, add `CASE STUDY CIE3/Unity_Retail_AR_Demo`, open it, choose **CGVR CIE3 → Open Furniture Visualizer**, and press **Play**. The saved scene generates a furnished room with an interactive Phong shader, independently controlled texture/bump mapping, and window-to-viewport sliders plus a real camera viewport toggle.
+
+**Faculty demo:** `1/2/3` for lighting; select sofa and **F**, then `T/B` for texture/bump; `V` for mapping, **Reset point** for `(657.5, 708.0)`, then **Inset viewport**. Drag to orbit, scroll to zoom, `R` to return to the room.
+
+**Unity runtime verification and real screenshots remain pending on your machine:** Unity is not installed in the preparation environment. No screenshots were fabricated. The Python verification below applies only to the earlier Python submission, not Unity.
+
+## Existing Python case-study materials
+
 ## Selected Case Study
 
 **Case Study 3: Retail and Remote Commerce** - WebXR furniture visualization for AR/VR.
