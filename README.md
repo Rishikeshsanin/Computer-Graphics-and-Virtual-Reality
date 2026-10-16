@@ -19,10 +19,30 @@ All files are organized by **lab number** and use clear names such as `filename_
 | **Lab 9** | Interactive 3D scene using Unity | `unity_interactive_scene_lab9/` |
 | **Lab 10** | 3D viewing pipeline, projection and viewport mapping | `3d_viewing_pipeline_lab10.py/.ipynb` |
 
+## CIE3 Case Study
+
+| Folder | Case Study | Main files |
+|---|---|---|
+| **CASE STUDY CIE3** | Retail and Remote Commerce - WebXR furniture visualization | `CASE_STUDY_REPORT.md`, `case_study_3_retail_ar.py`, `case_study_3_retail_ar.ipynb` |
+
+The CIE3 case study demonstrates:
+- ambient, diffuse and specular illumination,
+- texture and bump mapping without increasing polygon count,
+- window-to-viewport mapping for smartphone/VR displays,
+- WebXR-oriented rendering optimizations.
+
 ## Repository Structure
 
 ```text
 Computer-Graphics-and-Virtual-Reality/
+├── CASE STUDY CIE3/
+│   ├── README.md
+│   ├── CASE_STUDY_REPORT.md
+│   ├── case_study_3_retail_ar.py
+│   ├── case_study_3_retail_ar.ipynb
+│   ├── requirements_case_study.txt
+│   └── outputs/
+│       └── README.md
 ├── lab1/
 │   ├── dda_line_lab1.py
 │   ├── dda_line_lab1.ipynb
@@ -81,6 +101,7 @@ Computer-Graphics-and-Virtual-Reality/
 
 - Python
 - NumPy
+- Matplotlib
 - Pygame
 - PyOpenGL
 - OpenGL / GLSL
@@ -108,6 +129,13 @@ Run any Python experiment directly, for example:
 python lab5/cohen_sutherland_line_clipping_lab5.py
 ```
 
+For the CIE3 case study:
+
+```bash
+pip install -r "CASE STUDY CIE3/requirements_case_study.txt"
+python "CASE STUDY CIE3/case_study_3_retail_ar.py"
+```
+
 or open the corresponding `.ipynb` file in Jupyter Notebook / VS Code.
 
 ## Lab 9 — Unity
@@ -132,6 +160,7 @@ Unity version used: **6000.3.0f1**.
 - Lab 4 demonstrates composite transformations through matrix multiplication.
 - Lab 6 contains the corrected OpenGL depth-buffer setup using `pygame.GL_DEPTH_SIZE`.
 - Labs 7, 8 and 10 contain complete runnable code even though some of the original standalone notebooks were empty.
+- The CIE3 case study source was locally executed and verified before being added to the repository.
 
 ## Author
 
