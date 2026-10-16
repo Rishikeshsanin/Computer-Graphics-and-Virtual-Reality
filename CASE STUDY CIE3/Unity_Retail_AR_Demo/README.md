@@ -5,6 +5,14 @@ Case Study 3: Retail and Remote Commerce · **Unity 6000.3.0f1**
 
 Continues the supplied `CASE_STUDY_CIE3_UNITY_DRAFT_HANDOFF.zip`: the prepared room/furniture generator, Phong shader, UI and editor scripts are retained and completed.
 
+## Generated visual previews
+
+These **AI-generated illustrations are not Unity screenshots or runtime evidence**. They illustrate the room and leather-material concept; geometry, lighting and detail may differ from the actual project. Real Play-mode captures remain pending.
+
+![AI-generated room illustration; not a Unity screenshot](../Previews/generated-room-preview.png)
+
+![AI-generated sofa material illustration; not a Unity screenshot](../Previews/generated-material-preview.png)
+
 ## Open and run
 
 1. Download this repository and extract it. In **Unity Hub → Add → Add project from disk**, select `CASE STUDY CIE3/Unity_Retail_AR_Demo` (the folder containing `Assets`, `Packages`, `ProjectSettings`).

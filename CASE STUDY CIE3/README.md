@@ -14,6 +14,14 @@ In Unity Hub, add `CASE STUDY CIE3/Unity_Retail_AR_Demo`, open it, choose **CGVR
 
 **Unity runtime verification and real screenshots remain pending on your machine:** Unity is not installed in the preparation environment. No screenshots were fabricated. The Python verification below applies only to the earlier Python submission, not Unity.
 
+## Generated visual previews
+
+These **AI-generated illustrations are not Unity screenshots or runtime evidence**. They illustrate the room and leather-material concept; geometry, lighting and detail may differ from the actual project. Real Play-mode captures remain pending.
+
+![AI-generated room illustration; not a Unity screenshot](Previews/generated-room-preview.png)
+
+![AI-generated sofa material illustration; not a Unity screenshot](Previews/generated-material-preview.png)
+
 ## Existing Python case-study materials
 
 ## Selected Case Study
