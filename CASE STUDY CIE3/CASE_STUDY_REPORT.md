@@ -1,3 +1,5 @@
+> **Scope notice (18 October 2026):** This is the **original conceptual/Python report**, not the current Unity practical report. For faculty demonstration, see [UNITY_CASE_STUDY_REPORT.md](UNITY_CASE_STUDY_REPORT.md) and [Unity_Retail_AR_Demo](Unity_Retail_AR_Demo/README.md). Figures described below are Python-generated after running the script, **not** captured Unity Play-mode images. The Unity outputs folder currently has no genuine runtime screenshots. WebXR camera tracking and physical AR placement in the scenario/pipeline are **proposed architecture**, not implemented Unity features.
+
 # CS4104 Computer Graphics & Virtual Reality
 ## CIE3 Case Study - Retail and Remote Commerce
 
