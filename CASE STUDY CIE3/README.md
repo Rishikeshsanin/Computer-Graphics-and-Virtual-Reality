@@ -1,90 +1,74 @@
-# CASE STUDY CIE3 - Retail and Remote Commerce
+# CGVR CIE3 | Case Study 3: Retail and Remote Commerce
 
-**Course:** CS4104 Computer Graphics & Virtual Reality  
 **Student:** Munnaluri Rishikesh  
-**USN:** 1RVU23CSE291
+**USN:** 1RVU23CSE291  
+**University:** RV University  
+**Course:** CS4104 - Computer Graphics & Virtual Reality  
+**Case-study title:** Case Study 3: Retail and Remote Commerce  
+**Implementation:** Unity 6000.3.0f1 (Built-in Render Pipeline)
 
-## Unity demo — open this for the live presentation
+## Submission overview
 
-The supplied unfinished Unity draft has been continued in **[Unity_Retail_AR_Demo](Unity_Retail_AR_Demo/README.md)** using **Unity 6000.3.0f1**.
+The primary practical component is the **existing Unity furniture visualizer** at [Unity_Retail_AR_Demo](Unity_Retail_AR_Demo/README.md). It uses a procedural room with a red chair and brown leather sofa to demonstrate the three graphics principles requested by the faculty: Phong illumination, texture/bump mapping and window-to-viewport transformation. It is a **desktop 3D simulation of retail AR/VR graphics techniques**, **not** a functioning device-tracked AR application or deployed WebXR application.
 
-In Unity Hub, add `CASE STUDY CIE3/Unity_Retail_AR_Demo`, open it, choose **CGVR CIE3 → Open Furniture Visualizer**, and press **Play**. The saved scene generates a furnished room with an interactive Phong shader, independently controlled texture/bump mapping, and window-to-viewport sliders plus a real camera viewport toggle. The presentation update adds automatic furniture framing, responsive demo tabs, **P** presentation mode, and a **Maximize Game View** menu; use your existing scene without rebuilding.
+- [Unity implementation instructions and controls](Unity_Retail_AR_Demo/README.md)
+- [Unity-specific case-study report](UNITY_CASE_STUDY_REPORT.md)
+- [Evidence folder and genuine screenshot capture guide](outputs/README.md)
+- [Supplementary conceptual/Python case study](CASE_STUDY_REPORT.md)
 
-**Faculty demo:** `1/2/3` for lighting; select sofa and **F**, then `T/B` for texture/bump; `V` for mapping, **Reset point** for `(657.5, 708.0)`, then **Inset viewport**. Drag to orbit, scroll to zoom, `R` to return to the room.
+## Open and demonstrate the Unity application
 
-**The owner confirmed the previous Unity version runs in Play Mode on 18 October 2026.** The latest presentation changes still require a local Unity check because the preparation environment has no Unity Editor. Generated illustrations below remain labeled; real runtime captures are not supplied. Python verification below applies only to the earlier Python submission.
+1. Download/extract the repository. Open **Unity Hub -> Add -> Add project from disk** and select **`CASE STUDY CIE3/Unity_Retail_AR_Demo`**, the folder containing `Assets`, `Packages`, and `ProjectSettings`.
+2. Open in **Unity Editor 6000.3.0f1**. Wait for compilation and import to finish; use the **Built-in Render Pipeline**. No additional packages or model downloads are required.
+3. Select **CGVR CIE3 -> Open Furniture Visualizer**. Alternatively open `Assets/Scenes/CIE3_Retail_Furniture_Visualizer.unity`. **Do not select Rebuild** unless the existing scene is actually missing.
+4. Press **Play**, select the **Game** tab, and use a desktop landscape size such as **1440 x 900**. The furniture and GUI are constructed at runtime, so the scene hierarchy may look sparse before Play.
+5. Present the chair and sofa together. Press **1**, **2**, **3** for ambient-only, ambient+diffuse and ambient+diffuse+specular. Select **Sofa**, press **F** to focus, then toggle **T** for color texture and **B** for bump/normal map. Press **R** for the full room.
+6. Press **V** to show viewport mapping and **Reset point** to demonstrate **(0.25, -0.30) -> (657.5, 708.0) pixels** in the example phone viewport. Press **Inset viewport** to also alter the real Game-view camera rectangle; this is separate from the illustrative phone coordinates.
+7. Drag **in the scene** to orbit, scroll to zoom, and use Left/Right arrows to turn the selected furniture. You may use **CGVR CIE3 -> Validate Scene and Mapping** to perform the built-in shader/scene/mapping check in your own editor; its output is **not claimed as run here**.
 
-## Generated visual previews
+### Assignment concepts
 
-These **AI-generated illustrations are not Unity screenshots or runtime evidence**. They illustrate the room and leather-material concept; geometry, lighting and detail may differ from the actual project. Real Play-mode captures remain pending.
+| Faculty question | Relevant graphics principle | What the Unity code demonstrates |
+| --- | --- | --- |
+| How does a red chair respond to indoor/daylight illumination? | **Phong illumination**: ambient, Lambert diffuse and view-dependent specular light | A custom `CGVR/PhongFurniture` shader; keys **1/2/3** and daylight/specular controls |
+| How can a leather sofa gain surface detail without extra polygons? | **UV texture** for surface colors, **normal/bump mapping** for perturbed shading normals | Runtime leather albedo and normal textures; independently controlled **T/B** toggles |
+| How are interaction coordinates mapped to a phone/headset viewport? | **Window-to-viewport transformation** after projection | Normalized `[-1,1]` window, phone example and separate real camera inset |
 
-![AI-generated room illustration; not a Unity screenshot](Previews/generated-room-preview.png)
+**Phong (conceptual):** `I = Ia*ka + Ip*[kd*max(N.L,0) + ks*max(R.V,0)^n]`. The actual fragment shader calculates ambient, diffuse and specular RGB terms, modulates diffuse/ambient by albedo and uses per-pixel normals.
 
-![AI-generated sofa material illustration; not a Unity screenshot](Previews/generated-material-preview.png)
-
-## Existing Python case-study materials
-
-## Selected Case Study
-
-**Case Study 3: Retail and Remote Commerce** - WebXR furniture visualization for AR/VR.
-
-This folder contains the complete CIE3 case-study submission and runnable demonstrations for the three concepts asked in the assignment:
-
-1. **Illumination & Color Models** - ambient, diffuse and specular reflection using a simplified Phong model.
-2. **Texture & Bump Mapping** - leather surface detail without increasing polygon count.
-3. **Window-to-Viewport Transformation** - mapping logical AR interaction coordinates to smartphone/VR display coordinates.
-
-## Files
-
-```text
-CASE STUDY CIE3/
-├── README.md
-├── CASE_STUDY_REPORT.md
-├── case_study_3_retail_ar.py
-├── case_study_3_retail_ar.ipynb
-├── requirements_case_study.txt
-└── outputs/
-    └── README.md
-```
-
-The Python program generates these verified outputs when run:
-
-- `outputs/illumination_models.png`
-- `outputs/texture_bump_mapping.png`
-- `outputs/viewport_mapping.png`
-- `outputs/viewport_example.txt`
-
-## Run
-
-```bash
-pip install -r requirements_case_study.txt
-python case_study_3_retail_ar.py
-```
-
-You can also open `case_study_3_retail_ar.ipynb` in Jupyter Notebook or VS Code.
-
-## Key Formulas
-
-### Phong illumination
+**Window to viewport:**
 
 ```text
-I = Ia*ka + Ip[kd*max(N.L,0) + ks*max(R.V,0)^n]
+xv = xv_min + (xw - xw_min) * (xv_max - xv_min) / (xw_max - xw_min)
+yv = yv_min + (yw - yw_min) * (yv_max - yv_min) / (yw_max - yw_min)
+Window: x,y = [-1,1]; phone viewport: x=[70,1010], y=[120,1800]
+Point: (0.25,-0.30) -> (657.5,708.0) pixels
 ```
 
-### Window-to-viewport transformation
+## Actual Unity screenshot evidence
 
-```text
-xv = xv_min + (xw - xw_min)(xv_max - xv_min)/(xw_max - xw_min)
-yv = yv_min + (yw - yw_min)(yv_max - yv_min)/(yw_max - yw_min)
-```
+**Evidence status as of 18 October 2026: genuine Game-view screenshots have not been supplied or committed.** The `outputs/` directory contains [instructions and exact capture names](outputs/README.md), not falsely labeled renders. Add genuine captures there before faculty submission:
 
-## Verification
+1. `unity_01_room_overview.png`: complete red chair and brown sofa, Game tab in Play mode.
+2. `unity_02_phong_ambient.png` and `unity_03_phong_full.png`: same view with lighting modes 1 and 3.
+3. `unity_04_sofa_texture_off.png` and `unity_05_sofa_texture_on.png`: focused sofa, texture off/on with otherwise matching controls.
+4. `unity_06_sofa_bump_off.png` and `unity_07_sofa_bump_on.png`: mode 3, matching angle and texture, bump off/on.
+5. `unity_08_viewport_mapping.png`: mapping panel, Reset point and 657.5 / 708.0 values visible.
+6. `unity_09_inset_viewport.png`: actual inset viewport, room and screen marker visible.
 
-- Python script executed successfully.
-- Jupyter notebook executed successfully with no error cells before the clean GitHub copy was saved.
-- Three output figures were generated successfully.
-- Numerical viewport example: `(0.25, -0.30) -> (657.5, 708.0)` pixels.
+Once uploaded, embed verified files with e.g. `![Actual Unity Play-mode room overview](outputs/unity_01_room_overview.png)`. **Do not interpret the example filename as proof the file exists.**
 
-## Conclusion
+## Concept previews (not Unity output)
 
-The implementation demonstrates how core CG concepts can be combined in a practical WebXR furniture-preview application while balancing visual realism and real-time performance.
+The following images are **AI-generated illustrations** and **must never be submitted as measured outputs or Unity screenshots**:
+
+![AI-generated furniture room concept, not a Unity screenshot](Previews/generated-room-preview.png)
+
+![AI-generated leather material concept, not a Unity screenshot](Previews/generated-material-preview.png)
+
+## Supporting files and limits
+
+- `UNITY_CASE_STUDY_REPORT.md` documents the implemented Unity simulation, procedure, limitations and evidence status.
+- `CASE_STUDY_REPORT.md`, `case_study_3_retail_ar.py` and `case_study_3_retail_ar.ipynb` are **earlier Python/conceptual work**, not Unity test evidence. Python plots described there are generated only after running the script and are not presently committed to `outputs/`.
+- No hardware AR tracking, measured Unity FPS, mobile deployment, automated Unity runtime verification or genuine screenshots are claimed.
+- Only the submission documentation needs revision; the working `Unity_Retail_AR_Demo/Assets`, `Packages` and `ProjectSettings` remain unchanged.
