@@ -47,6 +47,33 @@ public static class CIE3SceneBuilder
         BuildScene();
     }
 
+    [MenuItem("CGVR CIE3/Maximize Game View")]
+    public static void MaximizeGameView() { SetGameViewMaximized(true); }
+
+    [MenuItem("CGVR CIE3/Restore Game View")]
+    public static void RestoreGameView() { SetGameViewMaximized(false); }
+
+    private static void SetGameViewMaximized(bool maximized)
+    {
+        // Use the standard Game menu and public EditorWindow API; never recreate the scene.
+        if (!EditorApplication.ExecuteMenuItem("Window/General/Game"))
+        {
+            Debug.LogWarning("Open the Game tab and use Shift+Space to maximize or restore it.");
+            return;
+        }
+        EditorApplication.delayCall += () =>
+        {
+            EditorWindow window = EditorWindow.focusedWindow;
+            if (window != null && window.GetType().Name == "GameView")
+            {
+                window.maximized = maximized;
+                window.Focus();
+                window.Repaint();
+            }
+            else Debug.LogWarning("Focus the docked Game tab and use Shift+Space to maximize or restore it.");
+        };
+    }
+
     private static void EnsureScene()
     {
         if (AssetDatabase.LoadAssetAtPath<SceneAsset>(ScenePath) == null) BuildScene();

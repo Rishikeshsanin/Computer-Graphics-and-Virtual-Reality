@@ -8,11 +8,11 @@
 
 The supplied unfinished Unity draft has been continued in **[Unity_Retail_AR_Demo](Unity_Retail_AR_Demo/README.md)** using **Unity 6000.3.0f1**.
 
-In Unity Hub, add `CASE STUDY CIE3/Unity_Retail_AR_Demo`, open it, choose **CGVR CIE3 → Open Furniture Visualizer**, and press **Play**. The saved scene generates a furnished room with an interactive Phong shader, independently controlled texture/bump mapping, and window-to-viewport sliders plus a real camera viewport toggle.
+In Unity Hub, add `CASE STUDY CIE3/Unity_Retail_AR_Demo`, open it, choose **CGVR CIE3 → Open Furniture Visualizer**, and press **Play**. The saved scene generates a furnished room with an interactive Phong shader, independently controlled texture/bump mapping, and window-to-viewport sliders plus a real camera viewport toggle. The presentation update adds automatic furniture framing, responsive demo tabs, **P** presentation mode, and a **Maximize Game View** menu; use your existing scene without rebuilding.
 
 **Faculty demo:** `1/2/3` for lighting; select sofa and **F**, then `T/B` for texture/bump; `V` for mapping, **Reset point** for `(657.5, 708.0)`, then **Inset viewport**. Drag to orbit, scroll to zoom, `R` to return to the room.
 
-**Unity runtime verification and real screenshots remain pending on your machine:** Unity is not installed in the preparation environment. No screenshots were fabricated. The Python verification below applies only to the earlier Python submission, not Unity.
+**The owner confirmed the previous Unity version runs in Play Mode on 18 October 2026.** The latest presentation changes still require a local Unity check because the preparation environment has no Unity Editor. Generated illustrations below remain labeled; real runtime captures are not supplied. Python verification below applies only to the earlier Python submission.
 
 ## Generated visual previews
 
