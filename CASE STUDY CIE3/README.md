@@ -87,10 +87,15 @@ The mapping example is a **mathematical phone viewport**, not evidence that a re
 
 The two graphics below were produced as **AI-assisted concept illustrations** of the desired furniture environment and material direction. They are not Play-mode captures, measured outputs or evidence of the final interface.
 
+<details>
+<summary><strong>View the two optional AI concept illustrations</strong> (not Unity screenshots)</summary>
+
 | Room concept — illustrative | Material concept — illustrative |
 |:---:|:---:|
 | ![Illustrative room concept — not a Unity screenshot](Previews/generated-room-preview.png) | ![Illustrative material concept — not a Unity screenshot](Previews/generated-material-preview.png) |
 | **Concept art only** | **Concept art only** |
+
+</details>
 
 ### Genuine outputs
 

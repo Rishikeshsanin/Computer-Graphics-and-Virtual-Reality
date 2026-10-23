@@ -30,6 +30,8 @@ Capture the full-room view plus at least the most illustrative mode comparison i
 
 ## How to embed a capture once it exists
 
+Use this relative link in the **parent case-study README** only after the PNG has been added:
+
 ```markdown
 ![Unity Game view — full furniture showroom, captured in Play mode](outputs/unity_01_room_overview.png)
 ```
