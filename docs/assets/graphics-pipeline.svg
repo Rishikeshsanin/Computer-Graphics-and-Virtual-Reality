@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 245" width="1200" height="245" role="img" aria-label="Computer graphics learning progression from pixels through geometry and shaders to an interactive furniture application">
+<defs>
+ <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#0b1628"/><stop offset="1" stop-color="#112d41"/></linearGradient>
+ <linearGradient id="accent" x2="1"><stop stop-color="#54d6e9"/><stop offset="1" stop-color="#879dff"/></linearGradient>
+ <filter id="soft"><feDropShadow dx="0" dy="5" stdDeviation="12" flood-color="#07101d" flood-opacity=".35"/></filter>
+</defs>
+<rect x="0" y="0" width="1200" height="245" rx="20" fill="url(#bg)"/>
+<g stroke="#61879e" stroke-opacity=".10"><path d="M0 43H1200M0 86H1200M0 129H1200M0 172H1200M0 215H1200"/><path d="M60 0V245M180 0V245M300 0V245M420 0V245M540 0V245M660 0V245M780 0V245M900 0V245M1020 0V245M1140 0V245"/></g>
+<text x="35" y="31" fill="#89bbcd" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="2">THE CGVR LEARNING PATH</text>
+<g font-family="Arial,Helvetica,sans-serif" filter="url(#soft)">
+ <rect x="30" y="67" width="210" height="124" rx="14" fill="#173349" stroke="#4b9ab6"/>
+ <rect x="260" y="67" width="210" height="124" rx="14" fill="#183349" stroke="#5b95b7"/>
+ <rect x="490" y="67" width="210" height="124" rx="14" fill="#1d3450" stroke="#6d84c1"/>
+ <rect x="720" y="67" width="210" height="124" rx="14" fill="#243550" stroke="#8294ce"/>
+ <rect x="950" y="67" width="220" height="124" rx="14" fill="#20404c" stroke="#5fb9b7"/>
+ <g fill="#8dc5d7" font-size="12" font-weight="700" letter-spacing="1"><text x="49" y="93">LABS 01–02</text><text x="279" y="93">LABS 03–05</text><text x="509" y="93">LABS 06–08</text><text x="739" y="93">LABS 09–10</text><text x="969" y="93">CASE STUDY 03</text></g>
+ <g fill="#fff" font-size="21" font-weight="700"><text x="49" y="124">Raster pixels</text><text x="279" y="124">Geometry</text><text x="509" y="124">Rendering</text><text x="739" y="124">3D interaction</text><text x="969" y="124">Furniture studio</text></g>
+ <g fill="#b7c7da" font-size="14"><text x="49" y="152">Lines and circles</text><text x="279" y="152">Matrices + clipping</text><text x="509" y="152">Depth + shaders</text><text x="739" y="152">Cameras + viewport</text><text x="969" y="152">Unity + browser</text></g>
+</g>
+<g fill="none" stroke="url(#accent)" stroke-width="3" stroke-linejoin="round"><path d="M242 127h14m-7-6l7 6-7 6"/><path d="M472 127h14m-7-6l7 6-7 6"/><path d="M702 127h14m-7-6l7 6-7 6"/><path d="M932 127h14m-7-6l7 6-7 6"/></g>
+<text x="35" y="224" font-family="Arial,sans-serif" font-size="12" fill="#87a8bc">Each stage has an experiment guide, source, related screenshots and a verification status.</text>
+</svg>

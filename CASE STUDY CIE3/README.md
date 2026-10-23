@@ -1,4 +1,4 @@
-[← Back to all labs](../README.md) · [Live browser demo ↗](https://cgvr-furniture-studio.vercel.app/) · [Evidence guide](outputs/README.md)
+[← Repository](../README.md) · [Technical manual](../docs/MANUAL.md) · [Live browser demo ↗](https://cgvr-furniture-studio.vercel.app/) · [Evidence guide](outputs/README.md)
 
 # Furniture Studio
 ### CIE3 · Case Study 3 — Retail and Remote Commerce
@@ -34,6 +34,9 @@
 
 ### Phong illumination
 
+![Conceptual illustration of ambient, diffuse and specular contributions—not an application screenshot](../docs/assets/illumination-model.svg)
+
+
 A conceptual model for the intensity at a surface point:
 
 ```text
@@ -49,6 +52,9 @@ UV coordinates determine how a 2D leather-colour texture wraps onto the sofa. A 
 
 ### Window-to-viewport example
 
+![Conceptual mapping of logical window coordinates to a phone pixel viewport](../docs/assets/window-viewport.svg)
+
+
 ```text
 Window:      xw, yw in [-1, +1]
 Pixel area:  x from 70 to 1010; y from 120 to 1800
@@ -61,6 +67,9 @@ yv = 120 + (−0.30 + 1) / 2 × (1800 − 120) = 708.0
 The mapping example is a **mathematical phone viewport**, not evidence that a real phone camera was accessed.
 
 ## Demonstration plan
+
+For the full **four-minute faculty talk track**, stable comparison instructions and viva-style explanations, see the [presentation manual](../docs/DEMONSTRATION_GUIDE.md). For a clear map of the Unity shader and browser event flow, see the [architecture manual](../docs/ARCHITECTURE.md).
+
 
 1. **Open the showroom.** Show chair and sofa together and adjust the camera.
 2. **Lighting:** compare ambient-only, diffuse and specular modes.

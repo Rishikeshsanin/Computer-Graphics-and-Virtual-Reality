@@ -1,129 +1,147 @@
-<p align="center"><img src="docs/assets/cgvr-banner.svg" alt="Computer Graphics and Virtual Reality — RV University" width="100%"></p>
+<p align="center"><img src="docs/assets/cgvr-banner.svg" width="100%" alt="Computer Graphics and Virtual Reality — an academic graphics laboratory and furniture studio"></p>
+
+<h3 align="center">Computer Graphics & Virtual Reality — a visual lab manual</h3>
+
+<p align="center">An organized collection of <strong>10 graphics experiments</strong>, multiple Unity demonstrations, and a live 3D furniture showroom.<br>Explore the algorithms, follow the implementation, inspect genuine screenshots, and reproduce each exercise.</p>
 
 <p align="center">
-  <a href="https://cgvr-furniture-studio.vercel.app/"><img alt="Mobile browser demo" src="https://img.shields.io/badge/LIVE%20DEMO-Furniture%20Studio-137d8e?style=for-the-badge"></a>
-  <a href="CASE%20STUDY%20CIE3/README.md"><img alt="CIE3 Case Study" src="https://img.shields.io/badge/CASE%20STUDY-Retail%20%26%20Commerce-5866a6?style=for-the-badge"></a>
-  <a href="docs/SCREENSHOT_GALLERY.md"><img alt="Verified screenshot gallery" src="https://img.shields.io/badge/OUTPUTS-12%20Lab%20Screenshots-394e6d?style=for-the-badge"></a>
+<a href="docs/MANUAL.md"><img alt="Read technical manual" src="https://img.shields.io/badge/START%20HERE-Technical%20Manual-1f6686?style=for-the-badge"></a>
+<a href="https://cgvr-furniture-studio.vercel.app/"><img alt="Launch live browser showroom" src="https://img.shields.io/badge/LIVE%20WEB%20DEMO-Furniture%20Studio-11796c?style=for-the-badge"></a>
+<a href="docs/SCREENSHOT_GALLERY.md"><img alt="Browse genuine screenshots" src="https://img.shields.io/badge/OPEN-Gallery-454d83?style=for-the-badge"></a>
 </p>
 
-<p align="center"><strong>A complete, lab-by-lab exploration of rasterization, transformations, rendering and 3D interaction.</strong><br>
-Python & OpenGL experiments · Unity 6 projects · A responsive browser furniture showroom</p>
-
 <p align="center">
-<a href="#featured-project">Featured project</a> ·
-<a href="#laboratory-index">10 labs</a> ·
-<a href="#output-gallery">Outputs</a> ·
-<a href="#getting-started">Get started</a> ·
-<a href="#repository-guide">Repository guide</a>
+<a href="#explore-the-collection">Explore</a> ·
+<a href="#featured-case-study--furniture-studio">Case study</a> ·
+<a href="#all-10-laboratory-chapters">All labs</a> ·
+<a href="#visual-evidence">Screenshots</a> ·
+<a href="#quick-start">Quick start</a> ·
+<a href="#documentation-directory">Manual contents</a>
 </p>
 
 ---
 
-## Featured project
+## Explore the collection
 
-### Furniture Studio · CGVR CIE3
+| **01 · Read the manual** | **02 · Learn the concepts** | **03 · Run the projects** |
+|:---|:---|:---|
+| [**Technical Manual →**](docs/MANUAL.md) | [**Theory & equations →**](docs/GRAPHICS_THEORY.md) | [**Installation guide →**](docs/GETTING_STARTED.md) |
+| A guided path through every lab, the case study and evidence. | Rasterization, transforms, shaders, projection and worked examples. | Python, OpenGL, Unity 6000.3.0f1 and a static browser app. |
 
-**Case Study 3 — Retail and Remote Commerce** explores the graphics behind a virtual furniture preview: lighting a red chair, giving a leather sofa surface detail, and mapping interaction coordinates to a phone-sized viewport.
+| **04 · Understand the architecture** | **05 · See authentic results** | **06 · Present to faculty** |
+|:---|:---|:---|
+| [**Architecture diagrams →**](docs/ARCHITECTURE.md) | [**Illustrated screenshot gallery →**](docs/SCREENSHOT_GALLERY.md) | [**Presentation walkthrough →**](docs/DEMONSTRATION_GUIDE.md) |
+| Source map for Python, shader stages, Unity and Three.js. | 12 original lab outputs and real earlier-build Unity evidence. | Controls, discussion points and a repeatable demonstration order. |
 
-| **Open the mobile-browser experience** | **Explore the Unity project** |
-|:---|:---|
-| **[Launch Furniture Studio ↗](https://cgvr-furniture-studio.vercel.app/)** | **[Unity 6000.3.0f1 source →](CASE%20STUDY%20CIE3/Unity_Retail_AR_Demo/)** |
-| Touch orbit, pinch zoom, change lighting, textures and viewport mapping. | A desktop 3D demonstration using procedural furniture and a custom Phong-style shader. |
+## From pixels to immersive graphics
 
-[Read the case study](CASE%20STUDY%20CIE3/README.md) · [Unity setup](CASE%20STUDY%20CIE3/Unity_Retail_AR_Demo/README.md) · [Mobile-web source](CASE%20STUDY%20CIE3/mobile-web/README.md)
+[![CGVR learning pathway from raster algorithms through shaders to furniture studio](docs/assets/graphics-pipeline.svg)](docs/MANUAL.md)
 
-> **Scope:** These are educational 3D demonstrations of graphics principles—not live-camera AR, tracked WebXR or headset integrations. The desktop Unity demo was observed running locally by the project owner; later modifications and new Unity labs require separate runtime verification.
+The collection progresses from drawing individual raster pixels to transforming geometry, resolving visibility, computing lighting and building interactive 3D scenes.
 
-### Unity Furniture Studio — actual earlier-build screenshots
+## Featured case study · Furniture Studio
 
-| Genuine Unity showroom | Genuine Unity close-up |
+**Retail and Remote Commerce · CIE3 Case Study 3**
+
+The flagship exercise combines three essential CGVR topics in an interactive furniture room:
+
+- **Illumination:** compare ambient, diffuse and specular contributions on a red chair.
+- **Materials:** apply leather colour textures and bump/normal detail to a sofa without changing geometry.
+- **Viewport transformation:** convert normalized coordinates to a defined phone-pixel rectangle.
+
+| **Unity desktop** | **Mobile & desktop browser** |
 |:---:|:---:|
-| [![CIE3 Unity full room — earlier build](CASE%20STUDY%20CIE3/outputs/unity_room_earlier_build.jpg)](CASE%20STUDY%20CIE3/outputs/unity_room_overview_earlier_build.jpg) | [![CIE3 Unity chair and sofa close-up — earlier build](CASE%20STUDY%20CIE3/outputs/unity_closeup_earlier_build.jpg)](CASE%20STUDY%20CIE3/outputs/unity_furniture_closeup_earlier_build.jpg) |
+| [![Real Unity showroom screenshot from earlier build](CASE%20STUDY%20CIE3/outputs/unity_room_earlier_build.jpg)](CASE%20STUDY%20CIE3/outputs/unity_room_overview_earlier_build.jpg) | **[Launch the live 3D Furniture Studio ↗](https://cgvr-furniture-studio.vercel.app/)** |
+| **Genuine Unity Game-view capture**, earlier build | Touch-friendly 3D showroom with camera, lighting, material and mapping controls |
+| [Unity project and controls →](CASE%20STUDY%20CIE3/Unity_Retail_AR_Demo/README.md) | [Web implementation and controls →](CASE%20STUDY%20CIE3/mobile-web/README.md) |
 
-<sub>Actual cropped screenshots from the project owner's **18 October 2026** Unity Play-mode session. These show the earlier functioning build, not completed tests of subsequent UI updates.</sub>
+**[Explore the complete case-study manual →](CASE%20STUDY%20CIE3/README.md)**
 
-## Laboratory index
+> The Unity capture is from an earlier working version; it does not verify every recent UI update. The browser site is a 3D graphics demonstration, **not camera-based AR** or a tracked WebXR system. [Read the evidence ledger](docs/EVIDENCE_STATUS.md).
 
-| Lab | Experiment | Implementation | Output |
+## All 10 laboratory chapters
+
+Every chapter has a goal, core theory, worked example, source links, exact execution instructions, actual stored screenshots where available, interpretation and viva questions.
+
+| Chapter | Topic | Visual / source | Deep-dive |
 |:---:|---|---|---|
-| **[01](lab1/README.md)** | DDA & Bresenham line drawing | Python / Pygame | [Screenshots](lab1/README.md#captured-outputs) |
-| **[02](lab2/README.md)** | Midpoint circle algorithm | Python / Pygame | [Screenshot](lab2/README.md#captured-outputs) |
-| **[03](lab3/README.md)** | 2D geometric transformations | Python / NumPy / Pygame | [Screenshot](lab3/README.md#captured-outputs) |
-| **[04](lab4/README.md)** | Composite transformation matrices | Python / NumPy / Pygame | Screenshot pending |
-| **[05](lab5/README.md)** | Cohen–Sutherland line clipping | Python / PyOpenGL | [Screenshot](lab5/README.md#captured-outputs) |
-| **[06](lab6/README.md)** | Z-buffer & visibility | Python / PyOpenGL | [Screenshot](lab6/README.md#captured-outputs) |
-| **[07](lab7/README.md)** | Phong illumination model | Python / PyOpenGL | [Screenshot](lab7/README.md#captured-outputs) |
-| **[08](lab8/README.md)** | Vertex & fragment shaders | Python / GLSL **+ Unity** | [OpenGL output](lab8/README.md#captured-outputs) |
-| **[09](lab9/README.md)** | Interactive Unity 3D scene | Unity / C# | Unity capture pending |
-| **[10](lab10/README.md)** | 3D viewing pipeline | Python / PyOpenGL **+ Unity** | [OpenGL outputs](lab10/README.md#captured-outputs) |
+| **[01](lab1/README.md)** | DDA vs Bresenham lines | 4 original captures | [Algorithm & screenshots →](lab1/README.md) |
+| **[02](lab2/README.md)** | Midpoint circle rasterization | 1 original capture | [Eight-way symmetry →](lab2/README.md) |
+| **[03](lab3/README.md)** | 2D geometric transformations | 1 translation capture | [Homogeneous matrices →](lab3/README.md) |
+| **[04](lab4/README.md)** | Composite transformations | Program; capture pending | [Transform order →](lab4/README.md) |
+| **[05](lab5/README.md)** | Cohen–Sutherland clipping | 1 original capture | [Outcodes →](lab5/README.md) |
+| **[06](lab6/README.md)** | Z-buffer visibility | 1 original capture | [Depth testing →](lab6/README.md) |
+| **[07](lab7/README.md)** | Phong lighting | 1 original capture | [Light components →](lab7/README.md) |
+| **[08](lab8/README.md)** | Vertex and fragment shaders | 1 OpenGL capture + Unity source | [Shader stages →](lab8/README.md) |
+| **[09](lab9/README.md)** | Interactive Unity scene | Source archive; capture pending | [Controls & scene →](lab9/README.md) |
+| **[10](lab10/README.md)** | Orthographic vs perspective | 2 OpenGL captures + Unity source | [Camera projections →](lab10/README.md) |
 
-Each lab has a short explanation, source links, execution instructions and any available genuine output. **Original programs and notebooks are preserved.**
+[**Read the full chapter-by-chapter manual →**](docs/MANUAL.md)
 
-## Output gallery
+## Visual evidence
 
-The images below are existing screenshots included in the repository from the original lab projects. They are **not mocked-up visuals or Unity screenshots**.
+**Original lab outputs** — images shown below are the actual committed Pygame/PyOpenGL captures, not artificial renderings.
 
-| Line drawing · Lab 01 | Circle drawing · Lab 02 |
+| Line rasterization · Lab 01 | Shader pipeline · Lab 08 |
 |:---:|:---:|
-| ![DDA Pygame output](lab1/dda_output_1_lab1.png) | ![Midpoint circle Pygame output](lab2/midpoint_circle_output_lab2.png) |
-| 2D transforms · Lab 03 | Clipping · Lab 05 |
-| ![2D translation screenshot](lab3/2d_translation_output_lab3.png) | ![Cohen–Sutherland OpenGL output](lab5/cohen_sutherland_output_lab5.png) |
-| Depth buffering · Lab 06 | Phong lighting · Lab 07 |
-| ![Z-buffer OpenGL output](lab6/z_buffer_output_lab6.png) | ![Phong OpenGL lighting output](lab7/phong_illumination_output_lab7.png) |
-| Vertex / fragment shaders · Lab 08 | 3D viewing · Lab 10 |
-| ![RGB shader OpenGL output](lab8/vertex_fragment_shaders_output_lab8.png) | ![Two viewport OpenGL output](lab10/3d_viewing_pipeline_output_1_lab10.png) |
+| [![DDA lab output](lab1/dda_output_1_lab1.png)](lab1/dda_output_1_lab1.png) | [![OpenGL RGB triangle](lab8/vertex_fragment_shaders_output_lab8.png)](lab8/vertex_fragment_shaders_output_lab8.png) |
+| [DDA & Bresenham chapter](lab1/README.md) | [OpenGL & Unity shader chapter](lab8/README.md) |
+| Visibility · Lab 06 | Projections · Lab 10 |
+| [![Z-buffer comparison](lab6/z_buffer_output_lab6.png)](lab6/z_buffer_output_lab6.png) | [![Two projection viewport screenshots](lab10/3d_viewing_pipeline_output_1_lab10.png)](lab10/3d_viewing_pipeline_output_1_lab10.png) |
+| [Depth test chapter](lab6/README.md) | [Viewing pipeline chapter](lab10/README.md) |
 
-**[Browse all 12 captured lab screenshots →](docs/SCREENSHOT_GALLERY.md)**  
-For verified Unity earlier-build images and forthcoming browser screenshots, see the [screenshot gallery](docs/SCREENSHOT_GALLERY.md) and [evidence checklist](docs/EVIDENCE_STATUS.md). No unverified renders are presented as test results.
+**[View all 12 original lab screenshots and both earlier-build Unity captures →](docs/SCREENSHOT_GALLERY.md)**  
+[What is verified, missing or illustrative? →](docs/EVIDENCE_STATUS.md)
 
-## Getting started
+## Quick start
 
-### Run a Python/OpenGL lab
-
-Clone the repository and install the Python dependencies:
+### Run Python/OpenGL programs
 
 ```bash
 git clone https://github.com/Rishikeshsanin/Computer-Graphics-and-Virtual-Reality.git
 cd Computer-Graphics-and-Virtual-Reality
 python -m pip install -r requirements.txt
-
-# A 2D Pygame example
 python lab1/dda_line_lab1.py
-
-# An OpenGL example
-python lab7/phong_illumination_lab7.py
 ```
 
-Use a Python environment with a desktop graphical display and working OpenGL drivers. For more commands, see the [setup guide](docs/GETTING_STARTED.md).
+Use a local graphical desktop; OpenGL labs require appropriate GPU drivers. [Complete setup & troubleshooting →](docs/GETTING_STARTED.md)
 
-### Open a Unity project
+### Open Unity demonstrations
 
-**Unity Editor 6000.3.0f1** is used for the CIE3, Lab 8 and Lab 10 projects. In **Unity Hub → Add project from disk**, select the exact project folder—not the repository root:
+In Unity Hub, choose **Add project from disk** and select the exact project folder containing `Assets`, `Packages`, and `ProjectSettings`. Open the saved scene and **press Play**.
 
-| Unity project | Directory |
+| Unity example | Open |
 |---|---|
-| **CIE3 furniture visualizer** | [`CASE STUDY CIE3/Unity_Retail_AR_Demo`](CASE%20STUDY%20CIE3/Unity_Retail_AR_Demo/) |
-| **Lab 8 shader demo** | [`lab8/Unity_Vertex_Fragment_Shaders`](lab8/Unity_Vertex_Fragment_Shaders/) |
-| **Lab 10 dual-camera demo** | [`lab10/Unity_3D_Viewing_Pipeline`](lab10/Unity_3D_Viewing_Pipeline/) |
+| **CIE3 Furniture Studio** | [Project folder](CASE%20STUDY%20CIE3/Unity_Retail_AR_Demo/README.md) |
+| **Lab 8 Shader Triangle** | [Project folder](lab8/Unity_Vertex_Fragment_Shaders/README.md) |
+| **Lab 10 Two-Camera Cube** | [Project folder](lab10/Unity_3D_Viewing_Pipeline/README.md) |
+| **Lab 9 Interactive Scene** | [Standalone Unity source ↗](https://github.com/Rishikeshsanin/unity-interactive-3d-scene) |
 
-Open the saved scene and press **Play**. The scenes construct their demo objects at runtime. Lab 9 retains its original [standalone Unity repository](https://github.com/Rishikeshsanin/unity-interactive-3d-scene) and a source copy here.
+**Unity version for CIE3, 8 and 10:** `6000.3.0f1`, Built-in Render Pipeline. Lab 9's folder in this collection is a source copy.
 
-## Repository guide
+### Use the browser companion
 
-| Resource | Description |
+**[Furniture Studio — live site ↗](https://cgvr-furniture-studio.vercel.app/)**. No Unity installation, API key or database. Requires JavaScript, WebGL-capable browser and an internet connection for the Three.js library.
+
+## Documentation directory
+
+| Manual section | Purpose |
 |---|---|
-| [Case-study hub](CASE%20STUDY%20CIE3/README.md) | Faculty scenario, implementation, calculations and evidence |
-| [Mobile browser app](CASE%20STUDY%20CIE3/mobile-web/README.md) | Live Three.js furniture studio; touch interaction |
-| [Getting started](docs/GETTING_STARTED.md) | Python and Unity environment setup |
-| [Screenshot gallery](docs/SCREENSHOT_GALLERY.md) | All 12 original lab-output images |
-| [Evidence status](docs/EVIDENCE_STATUS.md) | Which Unity/mobile captures are still required |
-| [Source repositories](SOURCE_REPOS.md) | Provenance of consolidated lab files |
-
-### Toolchain
-
-`Python` · `NumPy` · `Pygame` · `PyOpenGL` · `GLSL` · `Jupyter` · `Unity / C#` · `Three.js`
+| [**Start here**](docs/MANUAL.md) | Complete guided manual and progression map |
+| [**Graphics theory**](docs/GRAPHICS_THEORY.md) | Formulas, algorithms and practical interpretation |
+| [**Architecture**](docs/ARCHITECTURE.md) | Source structure, diagrams and application boundaries |
+| [**Screenshot gallery**](docs/SCREENSHOT_GALLERY.md) | Original captures with explanatory captions |
+| [**Evidence and validation**](docs/EVIDENCE_STATUS.md) | Captured / source-only / pending / concept distinctions |
+| [**Demonstration guide**](docs/DEMONSTRATION_GUIDE.md) | Faculty presentation, stable comparison procedure |
+| [**Getting started**](docs/GETTING_STARTED.md) | Installation and opening every project |
+| [**Troubleshooting**](docs/TROUBLESHOOTING.md) | Error recovery for Python, OpenGL, Unity and browsers |
+| [**Glossary**](docs/GLOSSARY.md) | Graphics vocabulary with links to implementations |
+| [**Source provenance**](SOURCE_REPOS.md) | Original standalone lab repositories |
 
 ---
 
-<p align="center"><strong>Munnaluri Rishikesh</strong> · CS4104 Computer Graphics & Virtual Reality · RV University, Bengaluru<br>
-Academic laboratory portfolio — explanations, code and evidence presented separately.</p>
+<p align="center">
+<strong>Developed by Munnaluri Rishikesh</strong><br>
+CS4104 · Computer Graphics & Virtual Reality · RV University, Bengaluru<br>
+<sub>Student laboratory collection · Reproducible source · Authentic visual evidence · Practical reference manual</sub>
+</p>
