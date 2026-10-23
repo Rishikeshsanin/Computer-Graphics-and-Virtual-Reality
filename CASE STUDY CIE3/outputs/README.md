@@ -8,7 +8,7 @@ This folder is reserved for **genuine captures of the Unity Game view in Play mo
 
 | Authentic earlier-build room overview | Authentic earlier-build close-up |
 |:---:|:---:|
-| [![Unity earlier build room](unity_room_earlier_build.jpg)](unity_room_earlier_build.jpg) | [![Unity earlier build close-up](unity_closeup_earlier_build.jpg)](unity_closeup_earlier_build.jpg) |
+| [![Unity earlier build room](unity_room_earlier_build.jpg)](unity_room_overview_earlier_build.jpg) | [![Unity earlier build close-up](unity_closeup_earlier_build.jpg)](unity_furniture_closeup_earlier_build.jpg) |
 
 These are **Game-view crops** of the user's real Unity Editor screenshots, compressed to JPEG for README display. Original PNGs remain in the user's provided evidence; they are not generated or rendered mockups.
 
@@ -43,3 +43,12 @@ Use this relative link in the **parent case-study README** only after the PNG ha
 ```
 
 The example above is **not an active image link** because the PNG has not yet been added. Do not rename the illustrations in [Previews](../Previews/README.md) as evidence.
+
+## Full Unity Editor screenshots (1920 × 1080)
+
+The two clickable gallery thumbnails above open these **full-editor captures**, including the Unity Play-mode toolbar, Game tab, and hierarchy for provenance:
+
+- [Full Unity Editor room overview](unity_room_overview_earlier_build.jpg) — JPEG derived from the owner's genuine Play-mode PNG.
+- [Full Unity Editor close-up](unity_furniture_closeup_earlier_build.jpg) — JPEG derived from the owner's genuine Play-mode PNG.
+
+The photographs are genuine **earlier-build** evidence; neither image verifies the latest camera/presentation implementation.

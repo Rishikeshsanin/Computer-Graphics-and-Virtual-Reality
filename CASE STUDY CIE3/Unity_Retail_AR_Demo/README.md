@@ -58,7 +58,7 @@ Click in the Game view before using keyboard shortcuts. The earlier version's in
 
 | Room view | Close-up view |
 |:---:|:---:|
-| [![Earlier Unity room view](../outputs/unity_room_earlier_build.jpg)](../outputs/unity_room_earlier_build.jpg) | [![Earlier Unity furniture closeup](../outputs/unity_closeup_earlier_build.jpg)](../outputs/unity_closeup_earlier_build.jpg) |
+| [![Earlier Unity room view](../outputs/unity_room_earlier_build.jpg)](../outputs/unity_room_overview_earlier_build.jpg) | [![Earlier Unity furniture closeup](../outputs/unity_closeup_earlier_build.jpg)](../outputs/unity_furniture_closeup_earlier_build.jpg) |
 
 Both are crops from real **18 October 2026** owner-provided Unity Editor Play-mode screenshots. They predate the latest presentation changes and do not establish test coverage of the current code.
 

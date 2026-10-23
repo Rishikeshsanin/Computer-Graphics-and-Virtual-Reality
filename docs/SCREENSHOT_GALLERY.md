@@ -25,7 +25,7 @@ These two images are **cropped, real Unity Play-mode screenshots** shared by the
 
 | Unity furniture showroom | Unity furniture close-up |
 |:---:|:---:|
-| [![Unity room from earlier working build](../CASE%20STUDY%20CIE3/outputs/unity_room_earlier_build.jpg)](../CASE%20STUDY%20CIE3/outputs/unity_room_earlier_build.jpg) | [![Unity close-up from earlier working build](../CASE%20STUDY%20CIE3/outputs/unity_closeup_earlier_build.jpg)](../CASE%20STUDY%20CIE3/outputs/unity_closeup_earlier_build.jpg) |
+| [![Unity room from earlier working build](../CASE%20STUDY%20CIE3/outputs/unity_room_earlier_build.jpg)](../CASE%20STUDY%20CIE3/outputs/unity_room_overview_earlier_build.jpg) | [![Unity close-up from earlier working build](../CASE%20STUDY%20CIE3/outputs/unity_closeup_earlier_build.jpg)](../CASE%20STUDY%20CIE3/outputs/unity_furniture_closeup_earlier_build.jpg) |
 
 [View source context and capture guide →](../CASE%20STUDY%20CIE3/outputs/README.md)
 
