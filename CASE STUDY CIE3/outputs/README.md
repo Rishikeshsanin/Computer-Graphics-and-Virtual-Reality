@@ -4,7 +4,13 @@
 
 This folder is reserved for **genuine captures of the Unity Game view in Play mode**. Do not replace screenshots with AI-generated illustrations, Python plots, or mobile-browser output.
 
-**Current repo state:** No CIE3 Unity PNGs are committed here. The project owner previously shared two real earlier-build screenshots in chat, but they have not been checked into this folder and do not verify the latest improvements.
+**Current repo state:** Two cropped, authentic JPEGs from the **18 October 2026 earlier Unity Play-mode build** are committed below. The nine detailed comparison PNGs are still pending and the earlier screenshots do **not** verify newer presentation improvements.
+
+| Authentic earlier-build room overview | Authentic earlier-build close-up |
+|:---:|:---:|
+| [![Unity earlier build room](unity_room_earlier_build.jpg)](unity_room_earlier_build.jpg) | [![Unity earlier build close-up](unity_closeup_earlier_build.jpg)](unity_closeup_earlier_build.jpg) |
+
+These are **Game-view crops** of the user's real Unity Editor screenshots, compressed to JPEG for README display. Original PNGs remain in the user's provided evidence; they are not generated or rendered mockups.
 
 ## Capture settings
 
