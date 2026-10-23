@@ -1,0 +1,35 @@
+name: Documentation link validation
+
+on:
+  pull_request:
+    paths:
+      - 'README.md'
+      - 'docs/**'
+      - 'lab*/README.md'
+      - 'lab*/Unity_*/README.md'
+      - 'CASE STUDY CIE3/**/README.md'
+      - '.github/workflows/docs-quality.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'README.md'
+      - 'docs/**'
+      - 'lab*/README.md'
+      - 'lab*/Unity_*/README.md'
+      - 'CASE STUDY CIE3/**/README.md'
+      - '.github/workflows/docs-quality.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    name: Check relative documentation links
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9eaf0 # v4.2.2
+      - name: Validate local links, images and folders
+        run: python3 docs/scripts/check_links.py
