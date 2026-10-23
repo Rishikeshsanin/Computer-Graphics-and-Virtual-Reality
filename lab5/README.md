@@ -1,51 +1,92 @@
-[← All labs](../README.md) · [Screenshot gallery](../docs/SCREENSHOT_GALLERY.md) · [Setup](../docs/GETTING_STARTED.md)
+[← All experiments](../README.md) · [Technical manual](../docs/MANUAL.md) · [Theory](../docs/GRAPHICS_THEORY.md) · [Screenshots](../docs/SCREENSHOT_GALLERY.md)
 
-# Lab 05 / Cohen–Sutherland Line Clipping
+# LAB 05 · Cohen–Sutherland Line Clipping
 
-> Clip segments to a rectangular viewing window using 4-bit region codes.
+> Accept, reject or intersect against a rectangle
 
-**Stack:** Python · Pygame · PyOpenGL
+**Stack:** Python / Pygame / PyOpenGL · **Course:** CS4104 Computer Graphics & Virtual Reality
+
+## On this page
+
+[Objective](#objective) · [Core concept](#core-concept) · [Worked example](#worked-example) · [How to run](#how-to-run) · [Captured outputs](#captured-outputs) · [Interpretation](#interpretation) · [Viva questions](#viva-questions)
 
 ## Objective
 
-Clip segments to a rectangular viewing window using 4-bit region codes. This experiment is part of the **CS4104 Computer Graphics and Virtual Reality** lab collection.
+Before rasterizing a line inside a window, clip segments that extend beyond its rectangular boundaries. Region codes make some decisions immediate.
 
-## Concept
+**Learning outcome:** Explain the method, locate its implementation in the supplied source, run the demonstration in the appropriate environment, and describe the observed output accurately.
 
-Each endpoint gets an outcode with left/right/top/bottom bits. Accept when both codes are zero; reject when their bitwise AND is non-zero; otherwise intersect against a boundary and repeat.
+## Core concept
 
-## Files
+Each endpoint receives four bits: LEFT=1, RIGHT=2, BOTTOM=4, TOP=8 (INSIDE=0 in source). If both codes are zero, accept. If bitwise AND is nonzero, reject. Otherwise intersect an outside endpoint with a boundary.
 
-| Asset | Role |
+![CGVR learning progression: where this lab fits](../docs/assets/graphics-pipeline.svg)
+
+## Worked example
+
+For a segment whose two endpoints both lie above the top edge, both TOP bits are set, so `code1 & code2 ≠ 0` and the segment is rejected without solving any intersection.
+
+## Algorithm / implementation trace
+
+```text
+Compute 4-bit outcode for each endpoint
+Loop:
+  If both outcodes == 0: accept
+  If (outcode1 & outcode2) != 0: reject
+  Choose outside endpoint and clip at a window boundary
+  Replace endpoint; recompute its outcode
+```
+
+## Source & files
+
+| File / folder | Purpose |
 |---|---|
-| [`cohen_sutherland_line_clipping_lab5.py`](./cohen_sutherland_line_clipping_lab5.py) | Python source |
-| [`cohen_sutherland_line_clipping_lab5.ipynb`](./cohen_sutherland_line_clipping_lab5.ipynb) | Jupyter notebook |
+| [`cohen_sutherland_line_clipping_lab5.py`](cohen_sutherland_line_clipping_lab5.py) | Outcode generation and line clipping |
+| [`cohen_sutherland_line_clipping_lab5.ipynb`](cohen_sutherland_line_clipping_lab5.ipynb) | Notebook version |
 
-## Run
+## How to run
 
-After installing [repository dependencies](../docs/GETTING_STARTED.md), execute from the **repository root**:
+From the **repository root**, install the [Python dependencies](../docs/GETTING_STARTED.md) and run:
 
 ```bash
 python lab5/cohen_sutherland_line_clipping_lab5.py
 ```
 
-The program opens a Pygame/OpenGL window. Close it normally or use `Esc` where supported.
+Run one command at a time; each program opens a desktop graphics window.
 
 ## Captured outputs
 
-**Figure 5.1 — cohen sutherland output lab5 (original lab output)**
+<a href="cohen_sutherland_output_lab5.png"><img src="cohen_sutherland_output_lab5.png" alt="Original OpenGL clipping output" width="760"></a>
 
-[![Lab 5 screenshot 1](./cohen_sutherland_output_lab5.png)](./cohen_sutherland_output_lab5.png)
+**Figure 5.1.** Original OpenGL clipping output. Select the image to open its committed original file.
 
-## What to observe
+**Source of these figures:** Existing lab-program output images preserved in this repository. These are genuine stored output captures, not newly executed screenshots.
 
-- The OpenGL view compares a segment's original extent with the clipped region.
-- An accepted clipped segment lies within the window bounds.
+## Interpretation
 
-## Evidence note
+1. Compare the original line to the portion kept within the clipping window.
+2. Trivial rejection needs only bitwise comparison.
+3. Segments crossing a boundary are replaced by calculated intersection coordinates.
 
-Images in this page link to files already committed in the repository. A saved PNG does not by itself establish recent performance metrics or confirm that a separate Unity project compiled on another system.
+### Common misunderstanding
+
+Clipping is a geometric operation before rasterization. Do not mistake it for merely hiding line segments outside a rectangle with a visual overlay.
+
+## Viva questions
+
+1. Why do outcodes accelerate clipping?
+2. What does nonzero bitwise AND prove?
+3. Which boundary is chosen when several outcode bits are set?
+
+For explanations, use the [graphics theory reference](../docs/GRAPHICS_THEORY.md) and refer to the actual source file rather than treating a screenshot as complete proof of correctness.
+
+## Explore next
+
+- [Lab 01 — rasterization](../lab1/README.md)
+- [Lab 10 — viewing pipeline](../lab10/README.md)
+
+[**← Lab index**](../README.md#laboratory-index) · [Manual](../docs/MANUAL.md) · [Evidence status](../docs/EVIDENCE_STATUS.md)
 
 ---
 
-[**Back to CGVR collection**](../README.md) · [Source provenance](../SOURCE_REPOS.md)
+<sub>CGVR Laboratory · Munnaluri Rishikesh · RV University</sub>
