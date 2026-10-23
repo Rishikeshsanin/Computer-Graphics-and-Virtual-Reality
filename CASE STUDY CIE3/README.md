@@ -1,78 +1,113 @@
-# CGVR CIE3 | Case Study 3: Retail and Remote Commerce
+[← Back to all labs](../README.md) · [Live browser demo ↗](https://cgvr-furniture-studio.vercel.app/) · [Evidence guide](outputs/README.md)
 
-**Student:** Munnaluri Rishikesh  
-**USN:** 1RVU23CSE291  
-**University:** RV University  
-**Course:** CS4104 - Computer Graphics & Virtual Reality  
-**Case-study title:** Case Study 3: Retail and Remote Commerce  
-**Implementation:** Unity 6000.3.0f1 (Built-in Render Pipeline)
+# Furniture Studio
+### CIE3 · Case Study 3 — Retail and Remote Commerce
 
-## Submission overview
+**CS4104 · Computer Graphics & Virtual Reality · RV University, Bengaluru**
 
-The primary practical component is the **existing Unity furniture visualizer** at [Unity_Retail_AR_Demo](Unity_Retail_AR_Demo/README.md). It uses a procedural room with a red chair and brown leather sofa to demonstrate the three graphics principles requested by the faculty: Phong illumination, texture/bump mapping and window-to-viewport transformation. It is a **desktop 3D simulation of retail AR/VR graphics techniques**, **not** a functioning device-tracked AR application or deployed WebXR application.
+**Student:** Munnaluri Rishikesh · **USN:** 1RVU23CSE291 · **Unity:** 6000.3.0f1
 
-- [Unity implementation instructions and controls](Unity_Retail_AR_Demo/README.md)
-- [Unity-specific case-study report](UNITY_CASE_STUDY_REPORT.md)
-- [Evidence folder and genuine screenshot capture guide](outputs/README.md)
-- [Supplementary conceptual/Python case study](CASE_STUDY_REPORT.md)
+<p>
+<a href="https://cgvr-furniture-studio.vercel.app/"><img src="https://img.shields.io/badge/OPEN%20LIVE%20DEMO-Mobile%20%2B%20Desktop-137d8e?style=for-the-badge" alt="Open furniture studio website"></a>
+<a href="Unity_Retail_AR_Demo/README.md"><img src="https://img.shields.io/badge/UNITY-DESKTOP%20SOURCE-455d82?style=for-the-badge" alt="Unity desktop source"></a>
+</p>
 
-## Open and demonstrate the Unity application
+> **Project brief:** A furniture retailer wants people to preview a **red velvet chair** and **leather sofa** in a virtual home setting. The graphics system must support natural-looking lighting, convincing surface materials and accurate coordinate mapping on different displays.
 
-1. Download/extract the repository. Open **Unity Hub -> Add -> Add project from disk** and select **`CASE STUDY CIE3/Unity_Retail_AR_Demo`**, the folder containing `Assets`, `Packages`, and `ProjectSettings`.
-2. Open in **Unity Editor 6000.3.0f1**. Wait for compilation and import to finish; use the **Built-in Render Pipeline**. No additional packages or model downloads are required.
-3. Select **CGVR CIE3 -> Open Furniture Visualizer**. Alternatively open `Assets/Scenes/CIE3_Retail_Furniture_Visualizer.unity`. **Do not select Rebuild** unless the existing scene is actually missing.
-4. Press **Play**, select the **Game** tab, and use a desktop landscape size such as **1440 x 900**. The furniture and GUI are constructed at runtime, so the scene hierarchy may look sparse before Play.
-5. Present the chair and sofa together. Press **1**, **2**, **3** for ambient-only, ambient+diffuse and ambient+diffuse+specular. Select **Sofa**, press **F** to focus, then toggle **T** for color texture and **B** for bump/normal map. Press **R** for the full room.
-6. Press **V** to show viewport mapping and **Reset point** to demonstrate **(0.25, -0.30) -> (657.5, 708.0) pixels** in the example phone viewport. Press **Inset viewport** to also alter the real Game-view camera rectangle; this is separate from the illustrative phone coordinates.
-7. Drag **in the scene** to orbit, scroll to zoom, and use Left/Right arrows to turn the selected furniture. You may use **CGVR CIE3 -> Validate Scene and Mapping** to perform the built-in shader/scene/mapping check in your own editor; its output is **not claimed as run here**.
+## Two ways to explore the same concepts
 
-### Assignment concepts
+| Browser companion | Unity desktop demonstration |
+|:---|:---|
+| **[Launch the interactive showroom ↗](https://cgvr-furniture-studio.vercel.app/)** | **[Open Unity project →](Unity_Retail_AR_Demo/README.md)** |
+| Responsive Three.js demo for desktop and touch-enabled phones. Rotate/zoom the camera, adjust the light, inspect materials and use the coordinate mapper. | Procedural furniture room using a custom Phong-style shader, UV texture/normal maps and window-to-viewport controls. |
+| **Status:** Public Vercel deployment checked READY, with HTML/CSS/JS responding HTTP 200; actual iOS/Android interaction not yet verified. | **Status:** Earlier Unity version was observed in Play mode by the project owner; improvements need local verification. |
 
-| Faculty question | Relevant graphics principle | What the Unity code demonstrates |
-| --- | --- | --- |
-| How does a red chair respond to indoor/daylight illumination? | **Phong illumination**: ambient, Lambert diffuse and view-dependent specular light | A custom `CGVR/PhongFurniture` shader; keys **1/2/3** and daylight/specular controls |
-| How can a leather sofa gain surface detail without extra polygons? | **UV texture** for surface colors, **normal/bump mapping** for perturbed shading normals | Runtime leather albedo and normal textures; independently controlled **T/B** toggles |
-| How are interaction coordinates mapped to a phone/headset viewport? | **Window-to-viewport transformation** after projection | Normalized `[-1,1]` window, phone example and separate real camera inset |
+**Important:** Neither application is a live camera AR furniture placement system or a tracked WebXR headset application. They are independent educational 3D visualizations illustrating the case-study requirements.
 
-**Phong (conceptual):** `I = Ia*ka + Ip*[kd*max(N.L,0) + ks*max(R.V,0)^n]`. The actual fragment shader calculates ambient, diffuse and specular RGB terms, modulates diffuse/ambient by albedo and uses per-pixel normals.
+## The three faculty questions
 
-**Window to viewport:**
+| Requirement | Graphics technique | Implementation & demonstration |
+|---|---|---|
+| **01 — Illumination and colour models** | Ambient, Lambertian diffuse and view-dependent specular reflection | Compare modes **1 / 2 / 3** in Unity or Lighting options on the website. |
+| **02 — Texture and bump mapping** | UV-mapped leather albedo and perturbation of shading normals | Toggle texture **T** and bump **B** for the sofa without changing mesh polygon count. |
+| **03 — Window-to-viewport transformation** | Affine mapping from logical window to screen rectangle | Use logical point **(0.25, −0.30)** and the example pixel viewport: **(657.5, 708.0)**. |
+
+### Phong illumination
+
+A conceptual model for the intensity at a surface point:
 
 ```text
-xv = xv_min + (xw - xw_min) * (xv_max - xv_min) / (xw_max - xw_min)
-yv = yv_min + (yw - yw_min) * (yv_max - yv_min) / (yw_max - yw_min)
-Window: x,y = [-1,1]; phone viewport: x=[70,1010], y=[120,1800]
-Point: (0.25,-0.30) -> (657.5,708.0) pixels
+I = Ia · ka + Ip · [kd · max(N·L, 0) + ks · max(R·V, 0)^n]
+      ambient          diffuse             specular
 ```
 
-## Actual Unity screenshot evidence
+The project separates ambient, diffuse and specular contributions to show how the chair responds to different lighting conditions. The Unity and browser implementations use related—but not identical—shading implementations.
 
-**Evidence status as of 18 October 2026: genuine Game-view screenshots have not been supplied or committed.** The `outputs/` directory contains [instructions and exact capture names](outputs/README.md), not falsely labeled renders. Add genuine captures there before faculty submission:
+### Leather texture and bump detail
 
-1. `unity_01_room_overview.png`: complete red chair and brown sofa, Game tab in Play mode.
-2. `unity_02_phong_ambient.png` and `unity_03_phong_full.png`: same view with lighting modes 1 and 3.
-3. `unity_04_sofa_texture_off.png` and `unity_05_sofa_texture_on.png`: focused sofa, texture off/on with otherwise matching controls.
-4. `unity_06_sofa_bump_off.png` and `unity_07_sofa_bump_on.png`: mode 3, matching angle and texture, bump off/on.
-5. `unity_08_viewport_mapping.png`: mapping panel, Reset point and 657.5 / 708.0 values visible.
-6. `unity_09_inset_viewport.png`: actual inset viewport, room and screen marker visible.
+UV coordinates determine how a 2D leather-colour texture wraps onto the sofa. A bump/normal representation changes the surface normals used by lighting calculations, producing detail **without adding vertices to the underlying sofa mesh**. Neither technique physically displaces the surface silhouette.
 
-Once uploaded, embed verified files with e.g. `![Actual Unity Play-mode room overview](outputs/unity_01_room_overview.png)`. **Do not interpret the example filename as proof the file exists.**
+### Window-to-viewport example
 
-## Concept previews (not Unity output)
+```text
+Window:      xw, yw in [-1, +1]
+Pixel area:  x from 70 to 1010; y from 120 to 1800
+Input:       xw = +0.25; yw = -0.30
 
-The following images are **AI-generated illustrations** and **must never be submitted as measured outputs or Unity screenshots**:
+xv = 70  + (0.25 + 1) / 2 × (1010 − 70)  = 657.5
+yv = 120 + (−0.30 + 1) / 2 × (1800 − 120) = 708.0
+```
 
-![AI-generated furniture room concept, not a Unity screenshot](Previews/generated-room-preview.png)
+The mapping example is a **mathematical phone viewport**, not evidence that a real phone camera was accessed.
 
-![AI-generated leather material concept, not a Unity screenshot](Previews/generated-material-preview.png)
+## Demonstration plan
 
-## Supporting files and limits
+1. **Open the showroom.** Show chair and sofa together and adjust the camera.
+2. **Lighting:** compare ambient-only, diffuse and specular modes.
+3. **Material colour:** focus the leather sofa and toggle the albedo texture.
+4. **Surface shading:** toggle the bump map with the camera held at a similar angle.
+5. **Viewport mapping:** move logical coordinates, reset to **(0.25, −0.30)** and explain the computed pixel location.
+6. **Finish:** return to the full-room view and explain mobile/browser vs Unity scope.
 
-- `UNITY_CASE_STUDY_REPORT.md` documents the implemented Unity simulation, procedure, limitations and evidence status.
-- `CASE_STUDY_REPORT.md`, `case_study_3_retail_ar.py` and `case_study_3_retail_ar.ipynb` are **earlier Python/conceptual work**, not Unity test evidence. Python plots described there are generated only after running the script and are not presently committed to `outputs/`.
-- No hardware AR tracking, measured Unity FPS, mobile deployment, automated Unity runtime verification or genuine screenshots are claimed.
-- Only the submission documentation needs revision; the working `Unity_Retail_AR_Demo/Assets`, `Packages` and `ProjectSettings` remain unchanged.
+### Implementation entry points
 
-## Mobile-browser companion (optional)
+| Resource | Link |
+|---|---|
+| Unity: scene, C# scripts, shader and controls | [`Unity_Retail_AR_Demo/`](Unity_Retail_AR_Demo/README.md) |
+| Live browser showroom | **[cgvr-furniture-studio.vercel.app ↗](https://cgvr-furniture-studio.vercel.app/)** |
+| Browser source, touch controls and setup | [`mobile-web/`](mobile-web/README.md) |
+| Unity-specific written analysis | [`UNITY_CASE_STUDY_REPORT.md`](UNITY_CASE_STUDY_REPORT.md) |
+| Earlier Python/conceptual analysis | [`CASE_STUDY_REPORT.md`](CASE_STUDY_REPORT.md) |
+| Unity evidence capture instructions | [`outputs/README.md`](outputs/README.md) |
+| Project source ZIP | [`CGVR_CIE3_Unity_Project_Source_and_Report.zip`](CGVR_CIE3_Unity_Project_Source_and_Report.zip) |
 
-The [mobile-friendly CGVR furniture studio](mobile-web/README.md) is a separate static browser application that demonstrates Phong lighting, colour/bump mapping and window-to-viewport transformation with touch rotation and pinch zoom. It is intended for phone or desktop web browsers and **is not camera-based AR or a WebXR headset application**. It supplements (but does not replace or modify) the Unity desktop implementation and faculty report. To host it, deploy the `mobile-web` directory as a static website, or serve it with an HTTP server.
+## Visual references and evidence
+
+### Original design concepts — not application screenshots
+
+The two graphics below were produced as **AI-assisted concept illustrations** of the desired furniture environment and material direction. They are not Play-mode captures, measured outputs or evidence of the final interface.
+
+| Room concept — illustrative | Material concept — illustrative |
+|:---:|:---:|
+| ![Illustrative room concept — not a Unity screenshot](Previews/generated-room-preview.png) | ![Illustrative material concept — not a Unity screenshot](Previews/generated-material-preview.png) |
+| **Concept art only** | **Concept art only** |
+
+### Genuine outputs
+
+- The owner previously shared two authentic **earlier-build Unity Play-mode** screenshots in the conversation, but they have not been committed to this GitHub folder. These prove that an earlier build displayed the furniture; they **do not prove** the newer presentation controls were tested.
+- `outputs/` contains a [9-image screenshot capture guide](outputs/README.md). Do not link to nonexistent PNGs.
+- The browser website has been deployed, but no verified physical-device screenshot is committed.
+
+See the [complete evidence inventory](../docs/EVIDENCE_STATUS.md) for what exists and what still needs a capture.
+
+## Technical boundaries
+
+- **Included:** procedural low-poly furniture and room, graphical lighting/material comparisons, camera/selection controls and mathematical viewport mapping.
+- **Not included:** live camera AR, SLAM/environment tracking, real-world occlusion estimation, WebXR headset support or measured production FPS.
+- The **Unity project remains unchanged** by the optional browser site. Earlier Python scripts and concept previews are retained as supporting work, not substituted for Unity outputs.
+- The faculty-ready written report may be distributed separately; do not confuse the older Python PDF in this folder with the updated RVU-formatted faculty report.
+
+---
+
+**CS4104 — CGVR | Munnaluri Rishikesh · RV University**  
+[Home](../README.md) · [Unity](Unity_Retail_AR_Demo/README.md) · [Mobile browser](mobile-web/README.md)

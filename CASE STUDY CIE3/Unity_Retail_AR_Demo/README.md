@@ -1,57 +1,65 @@
-# Furniture Studio - Unity CGVR CIE3
+[← Case-study hub](../README.md) · [Live mobile browser companion ↗](https://cgvr-furniture-studio.vercel.app/) · [Unity screenshot guide](../outputs/README.md)
 
-**Munnaluri Rishikesh | 1RVU23CSE291 | CS4104 Computer Graphics & Virtual Reality**  
-**Case Study 3: Retail and Remote Commerce | Unity 6000.3.0f1**
+# Unity Furniture Studio
+### CGVR CIE3 — Case Study 3: Retail and Remote Commerce
 
-This folder is the **existing and working Unity source project**. It demonstrates Phong illumination, leather UV/normal mapping and logical-to-pixel viewport coordinates in an interactive 3D furniture showroom. It is not a device-tracked AR or WebXR build. There is no requirement to rebuild or regenerate the scene for the faculty presentation.
+**Munnaluri Rishikesh · 1RVU23CSE291 · CS4104 · Unity Editor 6000.3.0f1**
 
-## Open the project exactly
+This is the working desktop **Unity** implementation of the furniture visualizer. It demonstrates a **custom Phong-style shader**, UV leather colour and normal mapping, and window-to-viewport mathematics.
 
-1. Download the repository ZIP, extract it, and locate `CASE STUDY CIE3/Unity_Retail_AR_Demo`.
-2. Unity Hub -> **Add -> Add project from disk** -> select **this exact Unity_Retail_AR_Demo folder** (with `Assets`, `Packages`, `ProjectSettings`).
-3. Open with **Unity 6000.3.0f1**. Use the **Built-in Render Pipeline**; wait for script compilation and importing. No additional third-party packages are needed.
-4. Click **CGVR CIE3 -> Open Furniture Visualizer** or open `Assets/Scenes/CIE3_Retail_Furniture_Visualizer.unity`. This is already saved; **do not select Rebuild Furniture Scene** unless it is genuinely missing.
-5. Press **Play**, then focus the **Game** tab. Furniture and UI are created at runtime, so a sparse editor scene before Play is normal. For presentation use landscape **1440 x 900** (or a readable 16:9 Game view).
+> **Rendering scope:** Desktop interactive 3D graphics demonstration. This is not a device-tracked AR app and does not need a headset or an AR-enabled smartphone.
 
-## Two-minute faculty demonstration
+## Quick start
 
-| Step | Action | Graphics explanation |
-| --- | --- | --- |
-| 1 | Show full room with red chair and brown leather sofa. Press **R** if zoomed. | Retail preview environment |
-| 2 | Press **1**, then **2**, then **3**. Adjust **Daylight** and **Sofa specular** sliders. | Ambient, diffuse and view-dependent specular contributions of the custom Phong-style fragment shader |
-| 3 | Choose **Sofa** and press **F** to focus. Toggle **T**. | UV leather color texture on/off |
-| 4 | Stay in light mode **3**; toggle **B** and orbit slightly. | Normal-map microdetail changes lighting without geometry/displacement |
-| 5 | Press **V**; click **Reset point**. Read the phone result **(657.5, 708.0)** for logical **(0.25, -0.30)**. | Window-to-viewport mapping from [-1,1] to phone-example pixel rectangle |
-| 6 | Click **Inset viewport** and then **Fill viewport**. | Actual Unity camera `rect` and `pixelRect`, distinct from illustrative phone mapping |
+1. Download/extract the repository; open **Unity Hub → Add project from disk**.
+2. Select this **`Unity_Retail_AR_Demo`** folder (contains `Assets/`, `Packages/` and `ProjectSettings/`) — not the repository root.
+3. Use **Unity Editor 6000.3.0f1**, Built-in Render Pipeline; let scripts import.
+4. Select **CGVR CIE3 → Open Furniture Visualizer**, or open `Assets/Scenes/CIE3_Retail_Furniture_Visualizer.unity`.
+5. Press **Play** and choose the **Game** tab. Furniture, lighting, camera and UI are generated in Play mode; a sparse Scene before Play is expected.
+6. Maximize the Game view with **Shift + Space** or the project's Game-view menu, if available.
 
-**Extra controls:** Drag inside 3D view to orbit; scroll to zoom. Left/Right arrows rotate the selected furniture. `R` resets the room camera, `F` focuses the selection, `T` toggles color texture, `B` toggles normal mapping and `V` toggles the mapping panel. Make sure the **Game** window has keyboard focus.
+**Do not rebuild the existing Unity scene** unless the saved scene is missing or corrupt. No external models/assets are required.
 
-### Three formulas and concepts
+## Demonstration controls
 
-**Phong:** `I = Ia*ka + Ip*[kd*max(N·L,0) + ks*max(R·V,0)^n]`. The included `Assets/Shaders/PhongFurniture.shader` computes these components in the fragment shader using view direction, light direction, surface normal and furniture tint.
+| Key / gesture | Action |
+|---|---|
+| **R** | Return to the complete furniture room |
+| **F** | Focus selected furniture |
+| **Drag** / **scroll** | Orbit / zoom |
+| **Left / Right** | Rotate selected furniture |
+| **1 / 2 / 3** | Ambient only / ambient + diffuse / full Phong lighting |
+| **T** | Toggle sofa colour texture |
+| **B** | Toggle sofa bump/normal map |
+| **V** | Show or hide window-to-viewport mapping |
+| **P** / **Escape** | Presentation mode / restore controls in the newer source version |
 
-**Texture vs bump:** The `RetailARCaseStudyDemo.cs` script generates brown leather albedo and RGB normal textures at runtime. The shader samples mesh UVs for color and decodes tangent-space normals for light calculations. Mesh positions, polygon count and silhouette remain unchanged by toggling either feature.
+Click in the Game view before using keyboard shortcuts. The earlier version's interface shows all controls simultaneously; the newer source adds presentation features and must be verified locally.
 
-**Window-to-viewport:** `xv = xv_min + (xw-xw_min)*(xv_max-xv_min)/(xw_max-xw_min)`; same for `y`. With source [-1,1] and sample phone viewport x=70..1010, y=120..1800, point (0.25,-0.30) yields (657.5,708.0) px. Unity's GUI converts bottom-left screen coordinates to top-left UI positioning.
+## Three learning outcomes
 
-## Submission evidence and screenshots
+**01 · Illumination.** Compare ambient, diffuse and specular contributions on the red chair; use daylight/specular controls to see how lighting changes with normal and view direction.
 
-**No genuine Unity runtime screenshots are currently in GitHub `../outputs/`.** See [exact screenshot capture instructions](../outputs/README.md). A final PDF containing actual Unity output screenshots cannot truthfully be completed until images are supplied. The existing `../Previews/` images are **AI-generated concept illustrations**, not screenshots:
+**02 · Material detail.** The sofa's UV colour texture and tangent-space normal mapping alter the apparent material without subdividing the sofa mesh or increasing polygon count.
 
-- [Generated room concept (not Unity output)](../Previews/generated-room-preview.png)
-- [Generated material concept (not Unity output)](../Previews/generated-material-preview.png)
+**03 · Viewport coordinates.** With window `[-1,1]×[-1,1]` and viewport x=`[70,1010]`, y=`[120,1800]`, a logical point `(0.25,-0.30)` maps to `(657.5,708.0)` px. The actual Unity camera viewport inset is a separate interactive comparison.
 
-Read the [Unity case-study report](../UNITY_CASE_STUDY_REPORT.md) for explanations, method, scope and evidence status.
+### Key implementation files
 
-## Project files
+| File | Role |
+|---|---|
+| [Saved scene](Assets/Scenes/CIE3_Retail_Furniture_Visualizer.unity) | Entry point |
+| [`RetailARCaseStudyDemo.cs`](Assets/Scripts/RetailARCaseStudyDemo.cs) | Room generation, camera, procedural materials, interaction & mapper |
+| [`PhongFurniture.shader`](Assets/Shaders/PhongFurniture.shader) | Per-pixel ambient, diffuse and specular contributions |
+| [`CIE3SceneBuilder.cs`](Assets/Editor/CIE3SceneBuilder.cs) | Editor menu and scene access |
+| [`CIE3Validation.cs`](Assets/Editor/CIE3Validation.cs) | Optional scene/mapping checks |
 
-- `Assets/Scenes/CIE3_Retail_Furniture_Visualizer.unity` - saved launch scene.
-- `Assets/Scripts/RetailARCaseStudyDemo.cs` - furniture generation, controls, procedural textures and viewport calculations.
-- `Assets/Shaders/PhongFurniture.shader` - ambient/diffuse/specular lighting, UV texture and normal mapping.
-- `Assets/Editor/CIE3SceneBuilder.cs` - **Open Furniture Visualizer** menu; the optional rebuild path is not needed.
-- `Assets/Editor/CIE3Validation.cs` - optional shader/scene/numerical mapping checks.
-- `Packages/` and `ProjectSettings/` - project configuration for Unity 6 Built-in pipeline.
+## Captures and verification
 
-**Verification limitation:** This documentation was updated by reading repository source, **not** by running Unity in this environment. Do not claim an executed scene validation, screenshot capture, tested performance, or device AR integration based only on this documentation. The prior project-owner Play-mode check is not a substitute for actual submitted evidence.
+- **Previously observed:** project owner showed the earlier Unity build running in Play mode with the chair, sofa and mapping panel.
+- **Not yet checked in GitHub:** real Unity captures of the latest presentation improvements and lighting/material comparisons.
+- **Not runtime-measured:** GPU frame rate, latency or phone-camera AR.
 
-**If keyboard input doesn't work:** In Unity check `Edit -> Project Settings -> Player -> Other Settings -> Active Input Handling` and use the legacy **Input Manager (Old)** configuration already recorded in the supplied project settings.
+Capture the required modes using the [9-image evidence checklist](../outputs/README.md), preserving meaningful labels and input states. The files under `../Previews/` are **AI concepts**, never real Unity output.
+
+For the wider assignment narrative, see [the CIE3 hub](../README.md) and [Unity-specific report](../UNITY_CASE_STUDY_REPORT.md). The separately hosted [mobile browser companion](https://cgvr-furniture-studio.vercel.app/) demonstrates related concepts without replacing this project.

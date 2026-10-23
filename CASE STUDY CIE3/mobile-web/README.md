@@ -1,34 +1,59 @@
-# Mobile Browser Furniture Studio — CGVR CIE3
+[← Case-study hub](../README.md) · [Repository homepage](../../README.md)
 
-An optional, responsive **web-browser companion** to the existing Unity 6000.3.0f1 desktop application. It implements the same three educational graphics demonstrations without modifying or replacing the Unity source or faculty report.
+# Furniture Studio · Mobile & Desktop Web
 
-## Run / deploy
+<p><a href="https://cgvr-furniture-studio.vercel.app/"><img alt="Launch live browser experience" src="https://img.shields.io/badge/LAUNCH%20LIVE%20DEMO-Open%20Furniture%20Studio-137d8e?style=for-the-badge"></a></p>
 
-This is a static website. Deploy this folder directly on **Vercel** (Framework: Other, Root Directory: `CASE STUDY CIE3/mobile-web`) or serve it with any HTTP static server:
+An independent, responsive **Three.js furniture studio** that runs in a normal desktop or phone browser. It supplements the existing Unity desktop project—without modifying it.
+
+**Live URL:** **https://cgvr-furniture-studio.vercel.app/**
+
+## Explore
+
+| Capability | Interactions |
+|---|---|
+| **3D showroom** | Red chair, brown sofa, walls, rug, plant and window within a procedural scene |
+| **Camera** | Drag a finger or mouse to orbit; pinch on mobile / scroll on desktop to zoom; reset or focus Room/Chair/Sofa |
+| **Phong lighting** | Ambient-only, ambient + diffuse and full ambient + diffuse + specular; daylight and specular controls |
+| **Leather surface** | Switch between plain and textured albedo; toggle bump mapping while preserving geometry |
+| **Viewport transformation** | Move a logical point within `[-1,1]`, inspect calculated phone pixel coordinates and switch on inset viewport |
+
+The default viewport example is `(0.25,-0.30) → (657.5,708.0)` for the defined phone display rectangle.
+
+## Deployment and status
+
+- **Production host:** Vercel · [open deployment](https://cgvr-furniture-studio.vercel.app/).
+- The deployment was verified READY; the page and its `styles.css`, `scene.js` and `ui.js` files returned HTTP 200.
+- **Not yet verified:** appearance and touch behavior on a physical iPhone/Android device. Capture and test on real devices before treating it as mobile acceptance-tested.
+- **Not camera AR:** no phone-camera access, device tracking, plane detection, WebXR session or real-world furniture placement.
+
+## Run it locally
+
+No database, credentials, build command or dependency installation is required. Serve this folder over HTTP from the repository root:
 
 ```bash
 python -m http.server 8000 --directory "CASE STUDY CIE3/mobile-web"
 ```
 
-Open `http://localhost:8000` on desktop. For phone access, use a public HTTPS deployment or a reachable local-network server. **Do not open index.html as a `file://` URL**: browser ES modules may fail. Requires network access to the pinned **Three.js 0.186.1** package on jsDelivr, a modern WebGL 2 capable browser and JavaScript enabled. No accounts or environment variables.
+Open **http://localhost:8000/** on your computer. Opening `index.html` as a local `file://` URL may prevent JavaScript modules from loading.
 
-## Features
+**Runtime:** a modern WebGL-capable browser and internet access to load Three.js **0.186.1** from the pinned jsDelivr CDN.
 
-- **Mobile-friendly showroom:** procedural red velvet chair, brown leather sofa, room, plinths, window, plant, light and shadows.
-- **Touch interaction:** drag to orbit, two-finger pinch to zoom; desktop drag/scroll and accessible zoom/reset buttons. Room/Chair/Sofa focus.
-- **Phong lighting:** ambient-only, ambient+diffuse, ambient+diffuse+specular modes, daylight and specular intensity sliders. Uses Three.js MeshPhongMaterial and lighting.
-- **Material mapping:** procedural 256×256 colour texture and height-based bump map; independently switch each effect without changing mesh geometry.
-- **Window → viewport:** map logical `[-1,1]` coordinates onto example phone pixels x=70..1010, y=120..1800. Default `(0.25,-0.30)` gives `(657.5,708.0)`. Optional renderer viewport inset demonstrates a real viewport rectangle.
-- **No camera access:** this is **not device-tracked AR**, does not use WebXR or place furniture into a live phone camera.
+## Architecture
 
-## Validation status
+```text
+index.html  ── layout / accessible controls
+styles.css  ── responsive visual system and mobile layout
+ui.js       ── events, interaction state, logical-to-pixel mapping
+scene.js    ── Three.js scene, cameras, lights, geometry, materials
+```
 
-Static syntax/structure checks are provided during the repository integration. Browser visual verification on real iOS/Android hardware remains to be performed; do not report it as done without testing.
+The browser renderer is distinct from [Unity's custom furniture shader](../Unity_Retail_AR_Demo/README.md); they share the educational goals, not engine internals.
 
-## Source relationship
+## Authentic visual evidence
 
-- `../Unity_Retail_AR_Demo` — original Unity application, unchanged.
-- `../UNITY_CASE_STUDY_REPORT.md` — written faculty case-study report, unchanged.
-- `mobile-web/` — separate browser demonstration.
+The site is deployed; however, **no verified phone screenshot is currently included in GitHub**. See [evidence status](../../docs/EVIDENCE_STATUS.md) for the required capture. Do not use an AI poster as a device screenshot.
 
-The original CIE3 case-study submission does not require the mobile companion; this is an optional enhancement.
+---
+
+[Case study](../README.md) · [Unity source](../Unity_Retail_AR_Demo/README.md) · [Screenshot inventory](../../docs/SCREENSHOT_GALLERY.md)
