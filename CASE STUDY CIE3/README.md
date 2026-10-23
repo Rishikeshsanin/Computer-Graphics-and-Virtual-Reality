@@ -89,7 +89,7 @@ These are **genuine, cropped Unity Game-view screenshots** from the project owne
 
 | Full showroom overview | Furniture close-up |
 |:---:|:---:|
-| [![Actual Unity earlier-build wide room](outputs/unity_room_earlier_build.jpg)](outputs/unity_room_earlier_build.jpg) | [![Actual Unity earlier-build close furniture](outputs/unity_closeup_earlier_build.jpg)](outputs/unity_closeup_earlier_build.jpg) |
+| [![Actual Unity earlier-build wide room](outputs/unity_room_earlier_build.jpg)](outputs/unity_room_overview_earlier_build.jpg) | [![Actual Unity earlier-build close furniture](outputs/unity_closeup_earlier_build.jpg)](outputs/unity_furniture_closeup_earlier_build.jpg) |
 | Both chair and sofa visible; Unity Play mode | Red chair and leather sofa at a closer camera distance |
 
 [Open original context and capture notes →](outputs/README.md)

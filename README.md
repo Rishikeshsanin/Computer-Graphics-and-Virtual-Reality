@@ -38,7 +38,7 @@ Python & OpenGL experiments · Unity 6 projects · A responsive browser furnitur
 
 | Genuine Unity showroom | Genuine Unity close-up |
 |:---:|:---:|
-| [![CIE3 Unity full room — earlier build](CASE%20STUDY%20CIE3/outputs/unity_room_earlier_build.jpg)](CASE%20STUDY%20CIE3/outputs/unity_room_earlier_build.jpg) | [![CIE3 Unity chair and sofa close-up — earlier build](CASE%20STUDY%20CIE3/outputs/unity_closeup_earlier_build.jpg)](CASE%20STUDY%20CIE3/outputs/unity_closeup_earlier_build.jpg) |
+| [![CIE3 Unity full room — earlier build](CASE%20STUDY%20CIE3/outputs/unity_room_earlier_build.jpg)](CASE%20STUDY%20CIE3/outputs/unity_room_overview_earlier_build.jpg) | [![CIE3 Unity chair and sofa close-up — earlier build](CASE%20STUDY%20CIE3/outputs/unity_closeup_earlier_build.jpg)](CASE%20STUDY%20CIE3/outputs/unity_furniture_closeup_earlier_build.jpg) |
 
 <sub>Actual cropped screenshots from the project owner's **18 October 2026** Unity Play-mode session. These show the earlier functioning build, not completed tests of subsequent UI updates.</sub>
 
