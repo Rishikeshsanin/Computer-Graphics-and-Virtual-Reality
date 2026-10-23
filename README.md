@@ -15,9 +15,9 @@ All files are organized by **lab number** and use clear names such as `filename_
 | **Lab 5** | Cohen–Sutherland line clipping algorithm | `cohen_sutherland_line_clipping_lab5.py/.ipynb` |
 | **Lab 6** | Z-buffer hidden surface removal | `z_buffer_hidden_surface_removal_lab6.py/.ipynb` |
 | **Lab 7** | Phong illumination model | `phong_illumination_lab7.py/.ipynb` |
-| **Lab 8** | OpenGL vertex and fragment shaders | `vertex_fragment_shaders_lab8.py/.ipynb` |
+| **Lab 8** | OpenGL vertex and fragment shaders + Unity RGB triangle demo | `vertex_fragment_shaders_lab8.py/.ipynb`, `lab8/Unity_Vertex_Fragment_Shaders/` |
 | **Lab 9** | Interactive 3D scene using Unity | `unity_interactive_scene_lab9/` |
-| **Lab 10** | 3D viewing pipeline, projection and viewport mapping | `3d_viewing_pipeline_lab10.py/.ipynb` |
+| **Lab 10** | Viewing pipeline and projections + Unity dual-camera demo | `3d_viewing_pipeline_lab10.py/.ipynb`, `lab10/Unity_3D_Viewing_Pipeline/` |
 
 ## CIE3 Case Study
 
@@ -137,6 +137,13 @@ python "CASE STUDY CIE3/case_study_3_retail_ar.py"
 ```
 
 or open the corresponding `.ipynb` file in Jupyter Notebook / VS Code.
+
+## Unity projects — Labs 8 and 10
+
+- [Lab 8: Unity vertex/fragment shaders](lab8/Unity_Vertex_Fragment_Shaders/README.md): rotating RGB triangle with shader animation, pause/reset, speed controls.
+- [Lab 10: Unity viewing pipeline](lab10/Unity_3D_Viewing_Pipeline/README.md): rotating coloured cube with simultaneous orthographic/perspective cameras and projection sliders.
+
+Both are self-contained **Unity 6000.3.0f1** projects. In Unity Hub, add their folders individually (with Assets, Packages, ProjectSettings), open the saved scene and press Play. The original Python/OpenGL code and screenshots are retained. Unity Play-mode evidence is pending local validation.
 
 ## Lab 9 — Unity
 
