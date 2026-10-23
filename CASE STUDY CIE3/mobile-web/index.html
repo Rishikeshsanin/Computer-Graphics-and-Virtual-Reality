@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b1320">
+  <meta name="description" content="Interactive CGVR case-study furniture studio: Phong lighting, leather texture and bump mapping, and viewport transformation. Works on desktop and mobile browsers.">
+  <title>Furniture Studio | CGVR Case Study 3</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b1320'/%3E%3Cpath d='M14 36h36v14H14zM18 18h28v21H18z' fill='%23d8a86f'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js"}}</script>
+  <script defer src="./ui.js"></script>
+  <script type="module" src="./scene.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div><div class="brand-title">FURNITURE<span>STUDIO</span></div><div class="brand-subtitle">CGVR / CASE STUDY 03</div></div>
+      </div>
+      <div class="top-right"><span class="status-dot"></span><span class="top-status">INTERACTIVE SHOWROOM</span><a class="source-link" href="https://github.com/Rishikeshsanin/Computer-Graphics-and-Virtual-Reality/tree/main/CASE%20STUDY%20CIE3" target="_blank" rel="noopener noreferrer" aria-label="Open project source on GitHub">SOURCE ↗</a></div>
+    </header>
+
+    <main class="workspace">
+      <section class="stage" aria-label="Interactive 3D furniture showroom">
+        <canvas id="showroom" aria-label="3D showroom showing a red velvet chair and brown leather sofa. Drag to orbit, pinch or scroll to zoom." tabindex="0"></canvas>
+        <div class="stage-vignette" aria-hidden="true"></div>
+        <div class="stage-top"><span class="eyebrow">LIVE / 3D ENVIRONMENT</span><span class="stage-chip" id="mode-caption">FULL PHONG LIGHTING</span></div>
+        <div class="stage-bottom">
+          <div class="object-tabs" role="group" aria-label="Camera focus">
+            <button class="object-tab active" data-focus="room" aria-pressed="true"><span class="tiny-square"></span>ROOM</button>
+            <button class="object-tab" data-focus="chair" aria-pressed="false">CHAIR</button>
+            <button class="object-tab" data-focus="sofa" aria-pressed="false">SOFA</button>
+          </div>
+          <div class="view-actions"><button id="zoom-out" class="icon-button" aria-label="Zoom out">−</button><button id="reset-view" class="icon-button" aria-label="Reset camera">↺</button><button id="zoom-in" class="icon-button" aria-label="Zoom in">+</button></div>
+        </div>
+        <div class="stage-hint" id="stage-hint">DRAG TO ORBIT · PINCH TO ZOOM</div>
+        <div id="loading" class="loading-screen" role="status"><span class="loading-orbit"></span><strong>Preparing your showroom</strong><span>Loading interactive 3D objects…</span></div>
+        <div id="error-message" class="error-screen" role="alert" hidden><strong>3D view unavailable</strong><span id="error-detail">Try another browser or enable WebGL hardware acceleration.</span></div>
+      </section>
+
+      <aside class="control-dock" aria-label="Graphics experiment controls">
+        <div class="dock-intro"><div class="eyebrow">CS4104 / COMPUTER GRAPHICS &amp; VR</div><h1>Explore the <em>graphics.</em></h1><p>Three rendering experiments in one responsive room.</p></div>
+        <div class="segment-control" role="tablist" aria-label="Select experiment">
+          <button id="tab-light" class="segment active" role="tab" data-tab="light" aria-selected="true" aria-controls="panel-light">01 <span>LIGHTING</span></button>
+          <button id="tab-material" class="segment" role="tab" data-tab="material" aria-selected="false" aria-controls="panel-material">02 <span>MATERIAL</span></button>
+          <button id="tab-mapping" class="segment" role="tab" data-tab="mapping" aria-selected="false" aria-controls="panel-mapping">03 <span>MAPPING</span></button>
+        </div>
+        <div class="panels">
+          <section id="panel-light" class="experiment-panel" role="tabpanel" aria-labelledby="tab-light">
+            <div class="panel-heading"><span>EXPERIMENT / 01</span><h2>Phong illumination</h2><p>Compare ambient light, surface diffusion, and view-dependent highlights.</p></div>
+            <div class="choice-list" role="group" aria-label="Lighting mode">
+              <button class="choice" data-light="ambient" aria-pressed="false"><span class="choice-num">01</span><span class="choice-copy"><strong>Ambient only</strong><small>Uniform background illumination</small></span><span class="choice-ring"></span></button>
+              <button class="choice" data-light="diffuse" aria-pressed="false"><span class="choice-num">02</span><span class="choice-copy"><strong>+ Diffuse</strong><small>Light-angle-dependent shading</small></span><span class="choice-ring"></span></button>
+              <button class="choice selected" data-light="specular" aria-pressed="true"><span class="choice-num">03</span><span class="choice-copy"><strong>+ Specular</strong><small>Glossy view-dependent reflection</small></span><span class="choice-ring"></span></button>
+            </div>
+            <div class="field"><div class="field-label"><label for="daylight">Daylight intensity</label><output id="daylight-value">1.00</output></div><input id="daylight" type="range" min="0.2" max="1.8" step="0.05" value="1" /></div>
+            <div class="field"><div class="field-label"><label for="specular">Sofa specular</label><output id="specular-value">0.55</output></div><input id="specular" type="range" min="0" max="1" step="0.05" value="0.55" /></div>
+            <div class="science-note"><span>THE PRINCIPLE</span><p>I = I<sub>ambient</sub> + I<sub>diffuse</sub> + I<sub>specular</sub></p></div>
+          </section>
+
+          <section id="panel-material" class="experiment-panel" role="tabpanel" aria-labelledby="tab-material" hidden>
+            <div class="panel-heading"><span>EXPERIMENT / 02</span><h2>Leather surface detail</h2><p>Show how texture and normal/bump maps increase visual detail without adding polygons.</p></div>
+            <div class="material-preview"><div class="material-swatch"></div><div><strong>Brown leather sofa</strong><small>Procedural albedo &amp; bump maps</small></div></div>
+            <label class="toggle-row"><div><strong>Colour texture</strong><small>UV-mapped leather grain</small></div><input id="texture-enabled" type="checkbox" checked><span class="switch"></span></label>
+            <label class="toggle-row"><div><strong>Bump mapping</strong><small>Fine shading variations, same mesh</small></div><input id="bump-enabled" type="checkbox" checked><span class="switch"></span></label>
+            <div class="field"><div class="field-label"><label for="bump-strength">Bump strength</label><output id="bump-strength-value">0.06</output></div><input id="bump-strength" type="range" min="0" max="0.15" step="0.01" value="0.06"></div>
+            <button id="focus-sofa" class="wide-action">Inspect the sofa <span aria-hidden="true">↗</span></button>
+            <div class="science-note"><span>THE PRINCIPLE</span><p>Texture alters pixel colour; a bump map alters lighting response, not polygon count.</p></div>
+          </section>
+
+          <section id="panel-mapping" class="experiment-panel" role="tabpanel" aria-labelledby="tab-mapping" hidden>
+            <div class="panel-heading"><span>EXPERIMENT / 03</span><h2>Window → viewport</h2><p>Map a logical point in [−1, 1] to example phone-screen pixel coordinates.</p></div>
+            <div class="mapping-widget"><div class="mapping-window" aria-label="Logical input window"><span class="map-axis axis-x">X</span><span class="map-axis axis-y">Y</span><span class="cross-h"></span><span class="cross-v"></span><span class="map-dot" id="logical-dot"></span></div><div class="mapping-arrow" aria-hidden="true">→</div><div class="phone-frame"><span class="phone-notch"></span><span class="phone-dot" id="phone-dot"></span></div></div>
+            <div class="field"><div class="field-label"><label for="logical-x">Logical X</label><output id="logical-x-value">0.25</output></div><input id="logical-x" type="range" min="-1" max="1" step="0.05" value="0.25"></div>
+            <div class="field"><div class="field-label"><label for="logical-y">Logical Y</label><output id="logical-y-value">−0.30</output></div><input id="logical-y" type="range" min="-1" max="1" step="0.05" value="-0.3"></div>
+            <div class="mapping-result"><div><span>PHONE VIEWPORT / PIXELS</span><strong id="mapped-result">(657.5, 708.0)</strong></div><button id="mapping-reset">RESET</button></div>
+            <p class="viewport-footnote">Example phone viewport: X = 70…1010, Y = 120…1800, with a bottom-left coordinate origin.</p>
+            <label class="toggle-row inset-toggle"><div><strong>Inset 3D viewport</strong><small>Change the rendered camera rectangle</small></div><input id="inset-enabled" type="checkbox"><span class="switch"></span></label>
+          </section>
+        </div>
+        <div class="dock-footer"><span><span class="status-dot"></span> BUILT FOR MOBILE + DESKTOP</span><button id="help-button" aria-haspopup="dialog">HOW TO USE ↗</button></div>
+      </aside>
+    </main>
+  </div>
+
+  <dialog id="help-dialog" class="help-dialog"><form method="dialog"><div class="help-top"><h2>How to explore</h2><button aria-label="Close help" class="close-help">✕</button></div><p>Use one finger or mouse drag on the scene to rotate the camera. Pinch with two fingers, use the zoom buttons, or scroll to change distance.</p><p>Choose <strong>Room / Chair / Sofa</strong> to focus the camera. Use <strong>Lighting</strong> for Phong illumination, <strong>Material</strong> for texture and bump, and <strong>Mapping</strong> for logical-to-pixel coordinate conversion.</p><p class="help-caveat">This is a browser-based educational 3D showroom, not live camera AR or device-tracked WebXR.</p><button class="wide-action" value="close">Got it</button></form></dialog>
+</body>
+</html>

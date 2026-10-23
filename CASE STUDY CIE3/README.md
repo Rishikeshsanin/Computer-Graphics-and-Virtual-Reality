@@ -72,3 +72,7 @@ The following images are **AI-generated illustrations** and **must never be subm
 - `CASE_STUDY_REPORT.md`, `case_study_3_retail_ar.py` and `case_study_3_retail_ar.ipynb` are **earlier Python/conceptual work**, not Unity test evidence. Python plots described there are generated only after running the script and are not presently committed to `outputs/`.
 - No hardware AR tracking, measured Unity FPS, mobile deployment, automated Unity runtime verification or genuine screenshots are claimed.
 - Only the submission documentation needs revision; the working `Unity_Retail_AR_Demo/Assets`, `Packages` and `ProjectSettings` remain unchanged.
+
+## Mobile-browser companion (optional)
+
+The [mobile-friendly CGVR furniture studio](mobile-web/README.md) is a separate static browser application that demonstrates Phong lighting, colour/bump mapping and window-to-viewport transformation with touch rotation and pinch zoom. It is intended for phone or desktop web browsers and **is not camera-based AR or a WebXR headset application**. It supplements (but does not replace or modify) the Unity desktop implementation and faculty report. To host it, deploy the `mobile-web` directory as a static website, or serve it with an HTTP server.

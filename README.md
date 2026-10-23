@@ -174,3 +174,7 @@ Unity version used: **6000.3.0f1**.
 **Rishikesh Munnaluri**
 
 Computer Graphics and Virtual Reality Laboratory
+
+## CGVR CIE3 mobile web companion
+
+Alongside the Unity case-study demo, [Mobile Furniture Studio](CASE%20STUDY%20CIE3/mobile-web/README.md) is a separate responsive, touch-friendly browser companion. It works on phones without Unity, demonstrates the same three graphics principles, and does **not** claim camera-based AR. The existing Unity and laboratory projects remain unchanged.
