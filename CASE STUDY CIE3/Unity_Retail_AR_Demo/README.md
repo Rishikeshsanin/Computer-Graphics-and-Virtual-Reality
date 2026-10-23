@@ -54,10 +54,18 @@ Click in the Game view before using keyboard shortcuts. The earlier version's in
 | [`CIE3SceneBuilder.cs`](Assets/Editor/CIE3SceneBuilder.cs) | Editor menu and scene access |
 | [`CIE3Validation.cs`](Assets/Editor/CIE3Validation.cs) | Optional scene/mapping checks |
 
+## Actual Unity Play-mode screenshots — earlier build
+
+| Room view | Close-up view |
+|:---:|:---:|
+| [![Earlier Unity room view](../outputs/unity_room_earlier_build.jpg)](../outputs/unity_room_earlier_build.jpg) | [![Earlier Unity furniture closeup](../outputs/unity_closeup_earlier_build.jpg)](../outputs/unity_closeup_earlier_build.jpg) |
+
+Both are crops from real **18 October 2026** owner-provided Unity Editor Play-mode screenshots. They predate the latest presentation changes and do not establish test coverage of the current code.
+
 ## Captures and verification
 
 - **Previously observed:** project owner showed the earlier Unity build running in Play mode with the chair, sofa and mapping panel.
-- **Not yet checked in GitHub:** real Unity captures of the latest presentation improvements and lighting/material comparisons.
+- **Now included:** two real, cropped screenshots of the earlier Unity build. **Still missing:** verified captures of the latest presentation improvements and lighting/material comparisons.
 - **Not runtime-measured:** GPU frame rate, latency or phone-camera AR.
 
 Capture the required modes using the [9-image evidence checklist](../outputs/README.md), preserving meaningful labels and input states. The files under `../Previews/` are **AI concepts**, never real Unity output.

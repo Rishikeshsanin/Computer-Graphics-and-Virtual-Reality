@@ -34,6 +34,14 @@ Python & OpenGL experiments · Unity 6 projects · A responsive browser furnitur
 
 > **Scope:** These are educational 3D demonstrations of graphics principles—not live-camera AR, tracked WebXR or headset integrations. The desktop Unity demo was observed running locally by the project owner; later modifications and new Unity labs require separate runtime verification.
 
+### Unity Furniture Studio — actual earlier-build screenshots
+
+| Genuine Unity showroom | Genuine Unity close-up |
+|:---:|:---:|
+| [![CIE3 Unity full room — earlier build](CASE%20STUDY%20CIE3/outputs/unity_room_earlier_build.jpg)](CASE%20STUDY%20CIE3/outputs/unity_room_earlier_build.jpg) | [![CIE3 Unity chair and sofa close-up — earlier build](CASE%20STUDY%20CIE3/outputs/unity_closeup_earlier_build.jpg)](CASE%20STUDY%20CIE3/outputs/unity_closeup_earlier_build.jpg) |
+
+<sub>Actual cropped screenshots from the project owner's **18 October 2026** Unity Play-mode session. These show the earlier functioning build, not completed tests of subsequent UI updates.</sub>
+
 ## Laboratory index
 
 | Lab | Experiment | Implementation | Output |
@@ -66,7 +74,7 @@ The images below are existing screenshots included in the repository from the or
 | ![RGB shader OpenGL output](lab8/vertex_fragment_shaders_output_lab8.png) | ![Two viewport OpenGL output](lab10/3d_viewing_pipeline_output_1_lab10.png) |
 
 **[Browse all 12 captured lab screenshots →](docs/SCREENSHOT_GALLERY.md)**  
-For Unity and browser demo screenshots, see the [evidence status and capture checklist](docs/EVIDENCE_STATUS.md). No unverified renders are presented as test results.
+For verified Unity earlier-build images and forthcoming browser screenshots, see the [screenshot gallery](docs/SCREENSHOT_GALLERY.md) and [evidence checklist](docs/EVIDENCE_STATUS.md). No unverified renders are presented as test results.
 
 ## Getting started
 

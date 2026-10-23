@@ -19,9 +19,19 @@ These **12 PNGs already exist in the lab folders** and were carried over from th
 | 10A | 3D viewing pipeline, **OpenGL**, output 1 | [![Viewing output 1](../lab10/3d_viewing_pipeline_output_1_lab10.png)](../lab10/3d_viewing_pipeline_output_1_lab10.png) |
 | 10B | 3D viewing pipeline, **OpenGL**, output 2 | [![Viewing output 2](../lab10/3d_viewing_pipeline_output_2_lab10.png)](../lab10/3d_viewing_pipeline_output_2_lab10.png) |
 
+## Authentic Unity case-study captures — earlier build
+
+These two images are **cropped, real Unity Play-mode screenshots** shared by the project owner on 18 October 2026. They document the **earlier furniture application**; do not treat them as tests of the newer build.
+
+| Unity furniture showroom | Unity furniture close-up |
+|:---:|:---:|
+| [![Unity room from earlier working build](../CASE%20STUDY%20CIE3/outputs/unity_room_earlier_build.jpg)](../CASE%20STUDY%20CIE3/outputs/unity_room_earlier_build.jpg) | [![Unity close-up from earlier working build](../CASE%20STUDY%20CIE3/outputs/unity_closeup_earlier_build.jpg)](../CASE%20STUDY%20CIE3/outputs/unity_closeup_earlier_build.jpg) |
+
+[View source context and capture guide →](../CASE%20STUDY%20CIE3/outputs/README.md)
+
 ## Captures still needed
 
-There is no committed screenshot for Lab 4, Lab 9, the **Unity** versions of Labs 8 and 10, the **Unity** CIE3 play session, or the mobile browser site. The separate CIE3 `Previews/` images are AI concept illustrations and must not be labeled as application output.
+There is no committed screenshot for Lab 4, Lab 9, the **Unity** versions of Labs 8 and 10, or the mobile browser site. Two earlier CIE3 Unity Play-mode screenshots are present, but updated CIE3 test captures are still missing. The separate CIE3 `Previews/` images are AI concept illustrations and must not be labeled as application output.
 
 Use the exact [capture instructions](EVIDENCE_STATUS.md) and replace pending notes only once files exist.
 

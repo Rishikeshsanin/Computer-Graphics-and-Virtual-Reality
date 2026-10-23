@@ -83,6 +83,17 @@ The mapping example is a **mathematical phone viewport**, not evidence that a re
 
 ## Visual references and evidence
 
+### Unity Play mode — real earlier-build captures
+
+These are **genuine, cropped Unity Game-view screenshots** from the project owner's running Unity Editor session on **18 October 2026**. They show the **earlier** furniture visualizer and are **not** proof that the newer presentation-mode improvements were tested.
+
+| Full showroom overview | Furniture close-up |
+|:---:|:---:|
+| [![Actual Unity earlier-build wide room](outputs/unity_room_earlier_build.jpg)](outputs/unity_room_earlier_build.jpg) | [![Actual Unity earlier-build close furniture](outputs/unity_closeup_earlier_build.jpg)](outputs/unity_closeup_earlier_build.jpg) |
+| Both chair and sofa visible; Unity Play mode | Red chair and leather sofa at a closer camera distance |
+
+[Open original context and capture notes →](outputs/README.md)
+
 ### Original design concepts — not application screenshots
 
 The two graphics below were produced as **AI-assisted concept illustrations** of the desired furniture environment and material direction. They are not Play-mode captures, measured outputs or evidence of the final interface.
@@ -97,9 +108,9 @@ The two graphics below were produced as **AI-assisted concept illustrations** of
 
 </details>
 
-### Genuine outputs
+### Remaining capture work
 
-- The owner previously shared two authentic **earlier-build Unity Play-mode** screenshots in the conversation, but they have not been committed to this GitHub folder. These prove that an earlier build displayed the furniture; they **do not prove** the newer presentation controls were tested.
+- The two authentic **earlier-build Unity screenshots** are now included in the gallery above. They prove the earlier desktop room and furniture were rendered, **not** that newer controls and graphics comparison modes passed testing.
 - `outputs/` contains a [9-image screenshot capture guide](outputs/README.md). Do not link to nonexistent PNGs.
 - The browser website has been deployed, but no verified physical-device screenshot is committed.
 

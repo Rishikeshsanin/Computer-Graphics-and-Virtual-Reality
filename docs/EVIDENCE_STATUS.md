@@ -11,7 +11,7 @@ This table separates **existing source screenshots** from **Play-mode/browser sc
 | Lab 8 (Unity) | Unity 6000.3.0f1 | **No** | Needs the RGB triangle in Game view. |
 | Lab 9 (Unity) | Unity/C# project source copy | **No** | Use standalone Unity repo and capture local running scene. |
 | Lab 10 (Unity) | Unity 6000.3.0f1 | **No** | Needs side-by-side orthographic/perspective cube screenshot. |
-| CIE3 (Unity) | Unity 6000.3.0f1 | **No, not committed** | Owner previously shared real screenshots of the earlier running build in ChatGPT; they do **not** verify later presentation changes. |
+| CIE3 (Unity) | Unity 6000.3.0f1 | **Yes — 2 earlier-build cropped JPEGs** | [Room](../CASE%20STUDY%20CIE3/outputs/unity_room_earlier_build.jpg), [close-up](../CASE%20STUDY%20CIE3/outputs/unity_closeup_earlier_build.jpg). They do **not** verify later presentation changes. |
 | CIE3 (mobile browser) | Three.js, hosted on Vercel | **No** | HTTP 200 and static assets were checked; physical mobile appearance/touch still need a screenshot. |
 
 ## Suggested authentic capture set
