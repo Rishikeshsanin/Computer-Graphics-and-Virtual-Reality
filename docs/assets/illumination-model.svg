@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="330" viewBox="0 0 1200 330" role="img" aria-label="Phong illumination components showing ambient, diffuse and specular response">
+ <rect width="1200" height="330" rx="24" fill="#0c192b"/>
+ <text x="32" y="40" font-family="Arial,sans-serif" fill="#a9cadc" font-size="15" letter-spacing="1.6">COMPONENTS OF A PHONG-STYLE REFLECTION MODEL</text>
+ <g font-family="Arial,sans-serif" stroke-linejoin="round">
+  <g transform="translate(35,67)"><rect width="350" height="220" rx="18" fill="#142b3a" stroke="#497c91"/><ellipse cx="175" cy="109" rx="72" ry="72" fill="#762438"/><circle cx="175" cy="109" r="72" fill="#5f1026" opacity=".35"/><text x="24" y="34" fill="#84c5dd" font-weight="bold" font-size="17">01 · AMBIENT</text><text x="24" y="200" fill="#dce7f3" font-size="14">Constant base illumination</text></g>
+  <g transform="translate(425,67)"><rect width="350" height="220" rx="18" fill="#142b3a" stroke="#497c91"/><defs><linearGradient id="df"><stop stop-color="#380719"/><stop offset=".75" stop-color="#d3374b"/><stop offset="1" stop-color="#ec7281"/></linearGradient></defs><circle cx="175" cy="109" r="72" fill="url(#df)"/><text x="24" y="34" fill="#84c5dd" font-weight="bold" font-size="17">02 · DIFFUSE</text><text x="24" y="200" fill="#dce7f3" font-size="14">Surface-normal / light-angle response</text></g>
+  <g transform="translate(815,67)"><rect width="350" height="220" rx="18" fill="#142b3a" stroke="#497c91"/><defs><radialGradient id="sp" cx=".66" cy=".28" r=".72"><stop stop-color="#ffe5e8"/><stop offset=".14" stop-color="#e97887"/><stop offset=".42" stop-color="#a61d36"/><stop offset="1" stop-color="#3d091b"/></radialGradient></defs><circle cx="175" cy="109" r="72" fill="url(#sp)"/><text x="24" y="34" fill="#84c5dd" font-weight="bold" font-size="17">03 · SPECULAR</text><text x="24" y="200" fill="#dce7f3" font-size="14">Viewer-dependent concentrated highlight</text></g>
+ </g>
+ <text x="35" y="317" fill="#90a6be" font-family="Arial,sans-serif" font-size="12">Conceptual vector illustration — NOT screenshots or measured Unity lighting output</text>
+</svg>
