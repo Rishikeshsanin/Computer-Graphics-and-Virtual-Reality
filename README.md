@@ -59,6 +59,14 @@ The flagship exercise combines three essential CGVR topics in an interactive fur
 
 > The Unity capture is from an earlier working version; it does not verify every recent UI update. The browser site is a 3D graphics demonstration, **not camera-based AR** or a tracked WebXR system. [Read the evidence ledger](docs/EVIDENCE_STATUS.md).
 
+## Download the CGVR CIE3 faculty report
+
+The **original 19-page RV University–formatted case-study report** is archived in the repository:
+
+[**📄 Download PDF report**](CASE%20STUDY%20CIE3/Faculty_Report/CS4104_CIE3_Retail_and_Remote_Commerce_RVU_Format_Rishikesh.pdf) · [**📝 Download editable Word report**](CASE%20STUDY%20CIE3/Faculty_Report/CS4104_CIE3_Retail_and_Remote_Commerce_RVU_Format_Rishikesh.docx) · [Report details and direct-download links](CASE%20STUDY%20CIE3/Faculty_Report/README.md)
+
+The faculty guide name and certificate signature are left blank for formal completion.
+
 ## All 10 laboratory chapters
 
 Every chapter has a goal, core theory, worked example, source links, exact execution instructions, actual stored screenshots where available, interpretation and viva questions.

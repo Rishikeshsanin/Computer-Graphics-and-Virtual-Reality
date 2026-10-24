@@ -17,6 +17,7 @@
 | Open the Unity furniture demo | [CIE3 desktop guide](../CASE%20STUDY%20CIE3/Unity_Retail_AR_Demo/README.md) | Unity version, saved scene, controls and three graphics outcomes |
 | Try the phone-compatible website | [Live Furniture Studio ↗](https://cgvr-furniture-studio.vercel.app/) | Interactive showroom and touch controls |
 | Present this to faculty | [Demonstration guide](DEMONSTRATION_GUIDE.md) | Talking points, exact controls, evidence and honest limitations |
+| Download the faculty submission report | [PDF and editable Word](../CASE%20STUDY%20CIE3/Faculty_Report/README.md) | Original 19-page RVU-formatted CGVR CIE3 document |
 | Find the screenshots | [Visual gallery](SCREENSHOT_GALLERY.md) | Original OpenGL/Pygame images and earlier-build Unity captures |
 | Debug setup or crashes | [Troubleshooting](TROUBLESHOOTING.md) | Python, OpenGL, Unity and web diagnostics |
 | See what has genuinely been tested | [Evidence ledger](EVIDENCE_STATUS.md) | Clearly separated captured, source-only and pending results |
