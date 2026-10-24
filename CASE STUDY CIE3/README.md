@@ -24,6 +24,14 @@
 
 **Important:** Neither application is a live camera AR furniture placement system or a tracked WebXR headset application. They are independent educational 3D visualizations illustrating the case-study requirements.
 
+## Download the faculty report
+
+**RV University format · 19 pages · original PDF and editable Word document.**
+
+[**📄 Get PDF**](Faculty_Report/CS4104_CIE3_Retail_and_Remote_Commerce_RVU_Format_Rishikesh.pdf) · [**📝 Get Word/DOCX**](Faculty_Report/CS4104_CIE3_Retail_and_Remote_Commerce_RVU_Format_Rishikesh.docx) · [**Open report archive**](Faculty_Report/README.md)
+
+This report documents the three graphics questions and includes actual earlier-build Unity screenshots. The faculty guide placeholder and certificate are **not signed or finalized**.
+
 ## The three faculty questions
 
 | Requirement | Graphics technique | Implementation & demonstration |
